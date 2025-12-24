@@ -1,7 +1,12 @@
 import React from 'react'
 import './styles.css'
 import Navbar from './components/Navbar/Navbar'
-import MagicCursor from './components/Animations/MagicCursor/MagicCursor'
+import { Manrope } from 'next/font/google'
+
+const manrope = Manrope({
+  variable: '--font-manrope',
+  subsets: ['latin'],
+})
 
 export const metadata = {
   description: 'This is a Painter Portfolio Website',
@@ -13,8 +18,7 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 
   return (
     <html lang="en">
-      {/* <MagicCursor /> */}
-      <body className={`antialiased relative w-full min-h-screen`}>
+      <body className={`${manrope.variable} antialiased relative w-full min-h-screen`}>
         <Navbar />
         {children}
       </body>

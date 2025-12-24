@@ -4,6 +4,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  font-family: var(--font-manrope), sans-serif;
 }
 
 /* nav links paint effect */
@@ -18,36 +19,49 @@ body {
     top: 50%;
     left: 50%;
     width: 140%;
-    height: 140%;
+    height: 140%; /* Adjusted to ensure it covers the text without being too huge */
+    pointer-events: none;
+    /* Paint Texture settings */
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(2deg) brightness(103%) contrast(104%);
-    background-image: url('/images/splash.png');
+    background-image: url('/images/paint.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 
-    /* Αρχική κατάσταση: Μετατοπισμένο αριστερά και κρυμμένο */
-    transform: translate(-60%, -50%) scale(1.5);
+    /* INITIAL STATE (0%) */
     opacity: 0;
+    z-index: -1;
 
-    /* Το κλειδί: Κόβουμε την εικόνα ώστε να φαίνεται 0% από αριστερά */
+    width: 400%; /* 140% * 3 */
+    height: 400%; /* 140% * 3 */
+    /* 1. We start the image slightly to the left (-55%) to give it 'momentum' */
+    /* 2. We keep a fixed scale (1.2) so it doesn't grow/shrink */
+    transform: translate(-55%, -50%);
+
+    /* 3. The Mask: The image is clipped 100% from the right side */
     clip-path: inset(0 100% 0 0);
 
-    z-index: -1;
-    /* Ομαλή μετάβαση για το clip-path και το transform */
+    /* Animation Timing */
+    /* ease-out feels more like a brush stroke (fast start, slows down at end) */
     transition:
-      clip-path 0.2s ease-in-out,
-      transform 0.4s ease-in-out,
-      opacity 0.3s;
+      clip-path 1.6s cubic-bezier(0.25, 1, 0.5, 1),
+      transform 1.6s cubic-bezier(0.25, 1, 0.5, 1),
+      opacity 0.3s ease-in;
   }
 
   .nav-link-splash:hover::before {
-    opacity: 0.9;
-    /* Τελική κατάσταση: Αποκαλύπτουμε όλο το πλάτος (0% κόψιμο) */
+    /* HOVER STATE (100%) */
+    opacity: 1;
+
+    /* 1. We slide it to perfect center (-50%) */
+    /* 2. Scale remains exactly the same (1.2) */
+    transform: translate(-50%, -50%);
+
+    /* 3. The Mask: We reveal everything (0% clip) */
     clip-path: inset(0 0 0 0);
-    /* Μικρή κίνηση προς τα δεξιά καθώς "βάφει" */
-    transform: translate(-50%, -50%) scale(2.8, 1.5);
   }
+
   .nav-link-splash:hover {
-    color: black;
+    color: black; /* Text color change */
   }
 }
