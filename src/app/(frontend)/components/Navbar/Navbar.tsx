@@ -11,11 +11,11 @@ import { FaImages } from 'react-icons/fa'
 export default function Navbar() {
   const pathname = usePathname()
   const links = [
-    { href: '/', label: 'Καλωσήρθατε', icon: <FaHome /> },
-    { href: '/about', label: 'Γνωρίστε μας', icon: <GoPersonFill /> },
-    { href: '/services', label: 'Υπηρεσίες', icon: <FaPaintRoller /> },
-    { href: '/portfolio', label: 'Τα Εργα μας', icon: <FaImages /> },
-    { href: '/contact', label: 'Καλέστε μας', icon: <IoIosCall /> },
+    { href: '#σπιτι', label: 'Καλωσήρθατε', icon: <FaHome /> },
+    { href: '#σχετικα', label: 'Γνωρίστε μας', icon: <GoPersonFill /> },
+    { href: '#υπηρεσίες', label: 'Υπηρεσίες', icon: <FaPaintRoller /> },
+    { href: '#εργα', label: 'Τα Εργα μας', icon: <FaImages /> },
+    { href: '#επικοινωνια', label: 'Καλέστε μας', icon: <IoIosCall /> },
   ]
   return (
     <nav id="navbar" className="fixed z-30 bg-blue-950 items-center justify-center h-22 w-full">
@@ -25,7 +25,7 @@ export default function Navbar() {
         {links.map((link) => (
           <li
             key={link.href}
-            className={`${pathname === link.href ? 'active' : ''} flex nav-link-splash flex-row items-center gap-1`}
+            className={`${pathname === link.href ? 'active' : ''} flex nav-link-splash flex-row items-center gap-2`}
           >
             <span>{link.icon}</span>
             <Link href={link.href}>{link.label}</Link>
