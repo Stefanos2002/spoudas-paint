@@ -1,6 +1,7 @@
 import { getPayload } from 'payload'
 import config from '@/payload.config'
 import React from 'react'
+import Banner from './components/Banner/Banner'
 
 export default async function HomePage() {
   const payloadConfig = await config
@@ -11,9 +12,5 @@ export default async function HomePage() {
   //   collection: 'services',
   // })
 
-  return (
-    <main className="p-8">
-      <div className="font-black text-4xl">Hello there</div>
-    </main>
-  )
+  return <Banner />
 }
