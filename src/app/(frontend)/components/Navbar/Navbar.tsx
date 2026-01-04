@@ -12,11 +12,10 @@ import Image from 'next/image'
 export default function Navbar() {
   const pathname = usePathname()
   const links = [
-    { href: '#σπιτι', label: 'Καλωσήρθατε', icon: <FaHome /> },
+    { href: '#αρχική', label: 'Αρχική', icon: <FaHome /> },
     { href: '#σχετικα', label: 'Γνωρίστε μας', icon: <GoPersonFill /> },
     { href: '#υπηρεσίες', label: 'Υπηρεσίες', icon: <FaPaintRoller /> },
     { href: '#εργα', label: 'Τα Εργα μας', icon: <FaImages /> },
-    { href: '#επικοινωνια', label: 'Καλέστε μας', icon: <IoIosCall /> },
   ]
   return (
     <nav id="navbar" className="fixed z-30 bg-blue-950 flex justify-between h-22 w-full">
@@ -35,12 +34,23 @@ export default function Navbar() {
         {links.map((link) => (
           <li
             key={link.href}
-            className={`${pathname === link.href ? 'active' : ''} flex nav-link-splash flex-row items-center gap-2`}
+            className={`${pathname === link.href ? 'active' : ''} flex cursor-pointer nav-link-splash flex-row items-center gap-2`}
           >
             <span>{link.icon}</span>
             <Link href={link.href}>{link.label}</Link>
           </li>
         ))}
+        <li>
+          <a
+            href="tel:+306973188392"
+            className="flex items-center bg-blue-700 text-white p-2 px-4 rounded-full gap-2
+               transition-all duration-300 hover:scale-105"
+            aria-label="Καλέστε μας στο 6973188392"
+          >
+            <IoIosCall />
+            <span>Καλέστε μας</span>
+          </a>
+        </li>
       </ul>
     </nav>
   )
