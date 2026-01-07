@@ -2,7 +2,7 @@ import styles from './Banner.module.css'
 
 export default function Banner() {
   return (
-    <main className="pt-22">
+    <main id="αρχική" className="pt-22">
       <div className={`${styles.banner} relative`}>
         <div className="flex flex-col gap-5 items-start absolute bottom-15 left-15">
           <h1 className="text-5xl font-black text-blue-950 tracking-tight">

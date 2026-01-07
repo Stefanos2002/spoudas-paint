@@ -2,6 +2,7 @@ import { getPayload } from 'payload'
 import config from '@/payload.config'
 import React from 'react'
 import Banner from './components/Banner/Banner'
+import Services from './components/Services/Services'
 
 export default async function HomePage() {
   const payloadConfig = await config
@@ -12,5 +13,10 @@ export default async function HomePage() {
   //   collection: 'services',
   // })
 
-  return <Banner />
+  return (
+    <>
+      <Banner />
+      <Services />
+    </>
+  )
 }
