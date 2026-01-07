@@ -8,10 +8,10 @@ export default function Services() {
           Υπηρεσίες
         </h1>
       </div>
-      <div className="order-2 w-full h-full grid grid-cols-1 grid-rows-6 place-items-center">
+      <div className="order-2 w-full h-full gap-20 grid grid-cols-1 grid-rows-6 place-items-center">
         <div className="flex items-center justify-evenly w-full">
           <Image src="/images/interior.jpg" alt="service1" width={700} height={200} />
-          <div className="max-w-120 flex flex-col gap-4 leading-7 text-lg">
+          <div className="max-w-120 order-last flex flex-col gap-4 leading-7 text-lg">
             <p>
               Αναλαμβάνουμε ελαιοχρωματισμούς εσωτερικών χώρων με έμφαση στη λεπτομέρεια και την
               καθαριότητα.
@@ -31,7 +31,24 @@ export default function Services() {
             </p>
           </div>
         </div>
-        <div>Hello</div>
+        <div className="flex items-center justify-evenly w-full">
+          <Image src="/images/exterior.jpg" alt="service1" width={700} height={200} />
+          <div className="max-w-120 order-first flex flex-col gap-4 leading-7 text-lg">
+            <p>
+              Ανανεώστε την πρόσοψη και τους εξωτερικούς χώρους του σπιτιού ή του γραφείου σας,
+              προστατεύοντάς τους ταυτόχρονα από ήλιο, βροχή και φθορές.
+            </p>
+            <p>
+              Προετοιμάζουμε σωστά τις επιφάνειες, καλύπτουμε ατέλειες και εφαρμόζουμε ανθεκτικά
+              ποιοτικά χρώματα για μακροχρόνιο αποτέλεσμα. Φροντίζουμε για καθαριότητα και ασφάλεια
+              καθ’ όλη τη διάρκεια της εργασίας.
+            </p>
+            <p>
+              Με την υπηρεσία μας, η πρόσοψή σας αποκτά ανανεωμένη όψη και μακροχρόνια προστασία,
+              συνδυάζοντας αισθητική και λειτουργικότητα με επαγγελματική φροντίδα.
+            </p>
+          </div>
+        </div>
         <div>Hello</div>
         <div>Hello</div>
         <div>Hello</div>
