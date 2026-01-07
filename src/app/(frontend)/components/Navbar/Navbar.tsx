@@ -12,7 +12,7 @@ import Image from 'next/image'
 export default function Navbar() {
   const pathname = usePathname()
   const links = [
-    { href: '#αρχική', label: 'Αρχική', icon: <FaHome /> },
+    { href: '#', label: 'Αρχική', icon: <FaHome /> },
     { href: '#υπηρεσίες', label: 'Υπηρεσίες', icon: <FaPaintRoller /> },
     { href: '#εργα', label: 'Τα Εργα μας', icon: <FaImages /> },
     { href: '#σχετικα', label: 'Γνωρίστε μας', icon: <GoPersonFill /> },
