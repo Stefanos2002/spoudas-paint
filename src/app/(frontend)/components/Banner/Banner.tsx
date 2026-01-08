@@ -15,6 +15,7 @@ export default function Banner() {
             Ζητήστε προσφορά
           </button>
         </div>
+        <div className="absolute bottom-0 left-0 w-full h-5 bg-gradient-to-b from-transparent to-blue-950"></div>
       </div>
     </main>
   )

@@ -21,9 +21,9 @@ export default function Services() {
           χώρου σας με έμφαση στην ποιότητα.
         </p>
       </div>
-      <div className="order-2 w-full">
+      <div className="order-2 bg-white w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 w-full">
-          <div className="p-15 flex flex-col justify-center gap-7 leading-8 text-lg bg-gray-50">
+          <div className="p-15 flex flex-col justify-center gap-7 leading-8 text-lg">
             <h1 className="font-black tracking-tight text-4xl">
               Ελαιοχρωματισμοί εσωτερικών χώρων με λεπτομέρεια και καθαριότητα
             </h1>
