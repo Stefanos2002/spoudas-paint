@@ -4,7 +4,7 @@ export default function Banner() {
   return (
     <main id="#" className="pt-22">
       <div className={`${styles.banner} relative`}>
-        <div className="flex flex-col gap-5 items-start absolute bottom-15 left-15">
+        <div className="flex flex-col gap-5 items-start absolute bottom-35 left-15">
           <h1 className="text-5xl font-black text-blue-950 tracking-tight">
             Επαγγελματικές βαφές χώρων
           </h1>
@@ -15,7 +15,6 @@ export default function Banner() {
             Ζητήστε προσφορά
           </button>
         </div>
-        <div className="absolute bottom-0 left-0 w-full h-5 bg-gradient-to-b from-transparent to-blue-950"></div>
       </div>
     </main>
   )
