@@ -1,6 +1,36 @@
 import Image from 'next/image'
 
 export default function Services() {
+  const services = [
+    {
+      id: 1,
+      title: 'Ανανέωση Εσωτερικών Χώρων με Έμφαση στην Καθαριότητα',
+      description:
+        'Μεταμορφώνουμε τον χώρο σας γρήγορα και υπεύθυνα. Δίνουμε προτεραιότητα στην απόλυτη προστασία των επίπλων και των δαπέδων σας, παραδίδοντας τον χώρο πεντακάθαρο. Χρησιμοποιούμε οικολογικά, άοσμα χρώματα κορυφαίας ποιότητας για ένα υγιεινό και άψογο αισθητικά αποτέλεσμα.',
+      image: '/images/interior01.jpg',
+    },
+    {
+      id: 2,
+      title: 'Εξωτερικοί Χρωματισμοί & Θωράκιση Προσόψεων',
+      description:
+        'Προστατέψτε το κτίριό σας από την υγρασία και τον χρόνο. Αναλαμβάνουμε την αποκατάσταση ρωγμών, τη μόνωση και τη βαφή εξωτερικών τοίχων με ειδικά ακρυλικά και ελαστομερή χρώματα αντοχής. Διαθέτουμε τον κατάλληλο εξοπλισμό για ασφαλή εργασία σε κάθε ύψος.',
+      image: '/images/exterior01.jpg',
+    },
+    {
+      id: 3,
+      title: 'Ανανέωση Εσωτερικών Χώρων με Έμφαση στην Καθαριότητα',
+      description:
+        'Μεταμορφώνουμε τον χώρο σας γρήγορα και υπεύθυνα. Δίνουμε προτεραιότητα στην απόλυτη προστασία των επίπλων και των δαπέδων σας, παραδίδοντας τον χώρο πεντακάθαρο. Χρησιμοποιούμε οικολογικά, άοσμα χρώματα κορυφαίας ποιότητας για ένα υγιεινό και άψογο αισθητικά αποτέλεσμα.',
+      image: '/images/wall-decoration01.jpg',
+    },
+    {
+      id: 4,
+      title: 'Ανανέωση Εσωτερικών Χώρων με Έμφαση στην Καθαριότητα',
+      description:
+        'Μεταμορφώνουμε τον χώρο σας γρήγορα και υπεύθυνα. Δίνουμε προτεραιότητα στην απόλυτη προστασία των επίπλων και των δαπέδων σας, παραδίδοντας τον χώρο πεντακάθαρο. Χρησιμοποιούμε οικολογικά, άοσμα χρώματα κορυφαίας ποιότητας για ένα υγιεινό και άψογο αισθητικά αποτέλεσμα.',
+      image: '/images/secret-lighting01.jpg',
+    },
+  ]
   return (
     <main id="υπηρεσίες" className="relative z-10 -mt-20 md:-mt-12 pb-10 flex flex-col">
       <div className="bg-white rounded-t-[2.5rem] md:rounded-t-[3rem] shadow-[0_-15px_40px_-10px_rgba(0,0,0,0.15)] pt-16 md:pt-24 overflow-hidden">
@@ -17,7 +47,7 @@ export default function Services() {
         </div>
         <div className="w-full">
           {/* Service 1 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 w-full">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 w-full">
             <div className="p-10 md:p-20 flex flex-col justify-center gap-7 leading-8 text-lg">
               <h1 className="font-black tracking-tight text-3xl md:text-4xl text-blue-950">
                 Ανανέωση Εσωτερικών Χώρων με Έμφαση στην Καθαριότητα
@@ -33,6 +63,23 @@ export default function Services() {
               <Image
                 src="/images/interior01.jpg"
                 alt="service1"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+          </div> */}
+          <div className="grid grid-cols-1 md:grid-cols-2 w-full">
+            <div className="p-10 md:p-20 flex flex-col justify-center gap-7 leading-8 text-lg">
+              <h1 className="font-black tracking-tight text-3xl md:text-4xl text-blue-950">
+                {services[0].title}
+              </h1>
+              <p className="text-gray-600">{services[0].description}</p>
+            </div>
+            <div className="relative w-full h-80 md:h-120 min-h-[300px]">
+              <Image
+                src={services[0].image}
+                alt={services[0].title}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
