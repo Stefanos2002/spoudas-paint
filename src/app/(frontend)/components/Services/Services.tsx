@@ -7,28 +7,28 @@ export default function Services() {
       title: 'Ανανέωση Εσωτερικών Χώρων με Έμφαση στην Καθαριότητα',
       description:
         'Μεταμορφώνουμε τον χώρο σας γρήγορα και υπεύθυνα. Δίνουμε προτεραιότητα στην απόλυτη προστασία των επίπλων και των δαπέδων σας, παραδίδοντας τον χώρο πεντακάθαρο. Χρησιμοποιούμε οικολογικά, άοσμα χρώματα κορυφαίας ποιότητας για ένα υγιεινό και άψογο αισθητικά αποτέλεσμα.',
-      image: '/images/interior01.jpg',
+      src: '/images/interior01.jpg',
     },
     {
       id: 2,
       title: 'Εξωτερικοί Χρωματισμοί & Θωράκιση Προσόψεων',
       description:
         'Προστατέψτε το κτίριό σας από την υγρασία και τον χρόνο. Αναλαμβάνουμε την αποκατάσταση ρωγμών, τη μόνωση και τη βαφή εξωτερικών τοίχων με ειδικά ακρυλικά και ελαστομερή χρώματα αντοχής. Διαθέτουμε τον κατάλληλο εξοπλισμό για ασφαλή εργασία σε κάθε ύψος.',
-      image: '/images/exterior01.jpg',
+      src: '/images/exterior01.jpg',
     },
     {
       id: 3,
-      title: 'Ανανέωση Εσωτερικών Χώρων με Έμφαση στην Καθαριότητα',
+      title: 'Υγρή Ταπετσαρία & Μοντέρνες Τεχνοτροπίες',
       description:
-        'Μεταμορφώνουμε τον χώρο σας γρήγορα και υπεύθυνα. Δίνουμε προτεραιότητα στην απόλυτη προστασία των επίπλων και των δαπέδων σας, παραδίδοντας τον χώρο πεντακάθαρο. Χρησιμοποιούμε οικολογικά, άοσμα χρώματα κορυφαίας ποιότητας για ένα υγιεινό και άψογο αισθητικά αποτέλεσμα.',
-      image: '/images/wall-decoration01.jpg',
+        'Δώστε χαρακτήρα και πολυτέλεια στους τοίχους σας. Εφαρμόζουμε υγρή ταπετσαρία που προσφέρει θερμομόνωση και ηχομόνωση, καθώς και ιδιαίτερες τεχνοτροπίες (πατητή τσιμεντοκονία, ψηφίδα τεχνοτροπίας, κ.ά.). Ιδανική λύση για να καλύψετε ατέλειες τοίχων και να δημιουργήσετε έναν χώρο που ξεχωρίζει.',
+      src: '/images/wall-decoration01.jpg',
     },
     {
       id: 4,
-      title: 'Ανανέωση Εσωτερικών Χώρων με Έμφαση στην Καθαριότητα',
+      title: 'Μόνωση & Βαφή Ταρατσών και Κεραμιδιών',
       description:
-        'Μεταμορφώνουμε τον χώρο σας γρήγορα και υπεύθυνα. Δίνουμε προτεραιότητα στην απόλυτη προστασία των επίπλων και των δαπέδων σας, παραδίδοντας τον χώρο πεντακάθαρο. Χρησιμοποιούμε οικολογικά, άοσμα χρώματα κορυφαίας ποιότητας για ένα υγιεινό και άψογο αισθητικά αποτέλεσμα.',
-      image: '/images/secret-lighting01.jpg',
+        'Αναλαμβάνουμε τη στεγανοποίηση και θερμομόνωση ταρατσών, καθώς και τη βαφή κεραμιδιών, προστατεύοντας το κτίριό σας από υγρασία και καιρικές καταπονήσεις. Χρησιμοποιούμε μονωτικά και ανακλαστικά χρώματα υψηλής αντοχής, για μείωση της θερμοκρασίας, εξοικονόμηση ενέργειας και μακροχρόνια προστασία.',
+      src: '/images/roof1.jpg',
     },
   ]
   return (
@@ -45,116 +45,33 @@ export default function Services() {
             χώρου σας με έμφαση στην ποιότητα.
           </p>
         </div>
+        {/* Services */}
         <div className="w-full">
-          {/* Service 1 */}
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 w-full">
-            <div className="p-10 md:p-20 flex flex-col justify-center gap-7 leading-8 text-lg">
-              <h1 className="font-black tracking-tight text-3xl md:text-4xl text-blue-950">
-                Ανανέωση Εσωτερικών Χώρων με Έμφαση στην Καθαριότητα
-              </h1>
-              <p className="text-gray-600">
-                Μεταμορφώνουμε τον χώρο σας γρήγορα και υπεύθυνα. Δίνουμε προτεραιότητα στην απόλυτη
-                προστασία των επίπλων και των δαπέδων σας, παραδίδοντας τον χώρο πεντακάθαρο.
-                Χρησιμοποιούμε οικολογικά, άοσμα χρώματα κορυφαίας ποιότητας για ένα υγιεινό και
-                άψογο αισθητικά αποτέλεσμα.
-              </p>
-            </div>
-            <div className="relative w-full h-80 md:h-120 min-h-[300px]">
-              <Image
-                src="/images/interior01.jpg"
-                alt="service1"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-          </div> */}
-          <div className="grid grid-cols-1 md:grid-cols-2 w-full">
-            <div className="p-10 md:p-20 flex flex-col justify-center gap-7 leading-8 text-lg">
-              <h1 className="font-black tracking-tight text-3xl md:text-4xl text-blue-950">
-                {services[0].title}
-              </h1>
-              <p className="text-gray-600">{services[0].description}</p>
-            </div>
-            <div className="relative w-full h-80 md:h-120 min-h-[300px]">
-              <Image
-                src={services[0].image}
-                alt={services[0].title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-          </div>
-          {/* Service 2 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 w-full">
-            <div className="relative w-full h-80 md:h-120 min-h-[300px] order-last md:order-first">
-              <Image
-                src="/images/exterior01.jpg"
-                alt="service2"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-            <div className="p-10 md:p-20 flex flex-col justify-center gap-7 leading-8 text-lg">
-              <h1 className="font-black tracking-tight text-3xl md:text-4xl text-blue-950">
-                Εξωτερικοί Χρωματισμοί & Θωράκιση Προσόψεων
-              </h1>
-              <p className="text-gray-600">
-                Προστατέψτε το κτίριό σας από την υγρασία και τον χρόνο. Αναλαμβάνουμε την
-                αποκατάσταση ρωγμών, τη μόνωση και τη βαφή εξωτερικών τοίχων με ειδικά ακρυλικά και
-                ελαστομερή χρώματα αντοχής. Διαθέτουμε τον κατάλληλο εξοπλισμό για ασφαλή εργασία σε
-                κάθε ύψος.
-              </p>
-            </div>
-          </div>
-          {/* Service 3 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 w-full">
-            <div className="p-10 md:p-20 flex flex-col justify-center gap-7 leading-8 text-lg">
-              <h1 className="font-black tracking-tight text-3xl md:text-4xl text-blue-950">
-                Υγρή Ταπετσαρία & Μοντέρνες Τεχνοτροπίες
-              </h1>
-              <p className="text-gray-600">
-                Δώστε χαρακτήρα και πολυτέλεια στους τοίχους σας. Εφαρμόζουμε υγρή ταπετσαρία που
-                προσφέρει θερμομόνωση και ηχομόνωση, καθώς και ιδιαίτερες τεχνοτροπίες (πατητή
-                τσιμεντοκονία, ψηφίδα τεχνοτροπίας, κ.ά.). Ιδανική λύση για να καλύψετε ατέλειες
-                τοίχων και να δημιουργήσετε έναν χώρο που ξεχωρίζει.
-              </p>
-            </div>
-            <div className="relative w-full h-80 md:h-120 min-h-[300px]">
-              <Image
-                src="/images/wall-decoration01.jpg"
-                alt="service1"
-                fill
-                className="object-cover object-bottom"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-          </div>
-          {/* Service 4 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 w-full">
-            <div className="relative w-full h-80 md:h-120 min-h-[300px] order-last md:order-first">
-              <Image
-                src="/images/secret-lighting01.jpg"
-                alt="service2"
-                fill
-                className="object-cover object-bottom"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-            <div className="p-10 md:p-20 flex flex-col justify-center gap-7 leading-8 text-lg">
-              <h1 className="font-black tracking-tight text-3xl md:text-4xl text-blue-950">
-                Κατασκευές Γυψοσανίδας & Κρυφός Φωτισμός
-              </h1>
-              <p className="text-gray-600">
-                Ολοκληρωμένες λύσεις διακόσμησης που αλλάζουν την ατμόσφαιρα. Αναλαμβάνουμε την
-                κατασκευή ψευδοροφών και ειδικών συνθέσεων γυψοσανίδας για την εγκατάσταση κρυφού
-                φωτισμού LED. Συνδυάζουμε την αρχιτεκτονική με τον φωτισμό για ένα σύγχρονο,
-                λειτουργικό και εντυπωσιακό αποτέλεσμα.
-              </p>
-            </div>
-          </div>
+          {services.length > 0 &&
+            services.map((service) => (
+              <div key={service.id} className="grid grid-cols-1 md:grid-cols-2 w-full">
+                <div
+                  className={`${service.id % 2 === 0 ? 'order-last' : 'order-first'} p-10 md:p-20 flex flex-col justify-center gap-7 leading-8 text-lg`}
+                >
+                  <h1 className="font-black tracking-tight text-3xl md:text-4xl text-blue-950">
+                    {service.title}
+                  </h1>
+                  <p className="text-gray-600">{service.description}</p>
+                  <button className="bg-neutral-500 cursor-pointer hover:scale-105 transition-all duration-300 text-white rounded-md w-max p-2 px-4">
+                    Δείτε περισσότερα έργα
+                  </button>
+                </div>
+                <div className="relative w-full h-80 md:h-auto min-h-[300px]">
+                  <Image
+                    src={service.src}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
+              </div>
+            ))}
         </div>
       </div>
     </main>

@@ -12,10 +12,10 @@ import Image from 'next/image'
 export default function Navbar() {
   const pathname = usePathname()
   const links = [
-    { href: '#', label: 'Αρχική', icon: <FaHome /> },
-    { href: '#υπηρεσίες', label: 'Υπηρεσίες', icon: <FaPaintRoller /> },
-    { href: '#εργα', label: 'Τα Εργα μας', icon: <FaImages /> },
-    { href: '#σχετικα', label: 'Γνωρίστε μας', icon: <GoPersonFill /> },
+    { href: '/', label: 'Αρχική', icon: <FaHome /> },
+    { href: '/#υπηρεσίες', label: 'Υπηρεσίες', icon: <FaPaintRoller /> },
+    { href: '/erga', label: 'Τα Εργα μας', icon: <FaImages /> },
+    { href: '/#ομάδα', label: 'Γνωρίστε μας', icon: <GoPersonFill /> },
   ]
   return (
     <nav id="navbar" className="fixed z-30 bg-blue-950 flex justify-between h-22 w-full">
