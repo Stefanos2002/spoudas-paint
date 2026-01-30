@@ -14,7 +14,7 @@ export default function Navbar() {
   const links = [
     { href: '/', label: 'Αρχική', icon: <FaHome /> },
     { href: '/#υπηρεσίες', label: 'Υπηρεσίες', icon: <FaPaintRoller /> },
-    { href: '/erga', label: 'Τα Εργα μας', icon: <FaImages /> },
+    { href: '/gallery', label: 'Τα Εργα μας', icon: <FaImages /> },
     { href: '/#ομάδα', label: 'Γνωρίστε μας', icon: <GoPersonFill /> },
   ]
   return (
@@ -40,16 +40,29 @@ export default function Navbar() {
             <Link href={link.href}>{link.label}</Link>
           </li>
         ))}
-        <li>
-          <a
-            href="tel:+306973188392"
-            className="flex items-center bg-blue-700 text-white p-2 px-4 rounded-full gap-2
-               transition-all duration-300 hover:scale-105"
-            aria-label="Καλέστε μας στο 6973188392"
+        <li className="relative group">
+          <button
+            className="flex cursor-pointer items-center bg-blue-700 text-white p-2 px-4 rounded-full gap-2
+    transition-all duration-300 hover:scale-105"
           >
             <IoIosCall />
             <span>Καλέστε μας</span>
-          </a>
+          </button>
+
+          <div className="absolute right-0 hidden group-hover:block bg-white rounded-lg shadow-lg overflow-hidden">
+            <a
+              href="tel:+306973188392"
+              className="block text-[16px] px-4 py-2 text-blue-950 hover:bg-blue-100"
+            >
+              📞 697 318 8392
+            </a>
+            <a
+              href="tel:+306989462660"
+              className="block text-[16px] px-4 py-2 text-blue-950 hover:bg-blue-100"
+            >
+              📞 698 946 2660
+            </a>
+          </div>
         </li>
       </ul>
     </nav>

@@ -1,44 +1,34 @@
-'use client' //becaus of ReactBeforeSliderComponent
-import Link from 'next/link'
-import ReactBeforeSliderComponent from 'react-before-after-slider-component'
-import 'react-before-after-slider-component/dist/build.css'
-import interiorBefore from '/public/images/interior-before.jpg'
-import interiorAfter from '/public/images/interior-after.jpg'
-// and so on for the others
+import Image from 'next/image'
 
 export default function Services() {
   const services = [
     {
       id: 1,
-      title: 'Ανανέωση Εσωτερικών Χώρων με Έμφαση στην Καθαριότητα',
+      title: 'Μεταμόρφωση Εσωτερικών Χώρων',
       description:
         'Μεταμορφώνουμε τον χώρο σας γρήγορα και υπεύθυνα. Δίνουμε προτεραιότητα στην απόλυτη προστασία των επίπλων και των δαπέδων σας, παραδίδοντας τον χώρο πεντακάθαρο. Χρησιμοποιούμε οικολογικά, άοσμα χρώματα κορυφαίας ποιότητας για ένα υγιεινό και άψογο αισθητικά αποτέλεσμα.',
-      before: { imageUrl: interiorBefore.src },
-      after: { imageUrl: interiorAfter.src },
+      src: '/images/interior.jpg',
     },
     {
       id: 2,
       title: 'Εξωτερικοί Χρωματισμοί & Θωράκιση Προσόψεων',
       description:
         'Προστατέψτε το κτίριό σας από την υγρασία και τον χρόνο. Αναλαμβάνουμε την αποκατάσταση ρωγμών, τη μόνωση και τη βαφή εξωτερικών τοίχων με ειδικά ακρυλικά και ελαστομερή χρώματα αντοχής. Διαθέτουμε τον κατάλληλο εξοπλισμό για ασφαλή εργασία σε κάθε ύψος.',
-      before: { imageUrl: interiorBefore.src },
-      after: { imageUrl: interiorAfter.src },
+      src: '/images/exterior.jpg',
     },
     {
       id: 3,
       title: 'Υγρή Ταπετσαρία & Μοντέρνες Τεχνοτροπίες',
       description:
         'Δώστε χαρακτήρα και πολυτέλεια στους τοίχους σας. Εφαρμόζουμε υγρή ταπετσαρία που προσφέρει θερμομόνωση και ηχομόνωση, καθώς και ιδιαίτερες τεχνοτροπίες (πατητή τσιμεντοκονία, ψηφίδα τεχνοτροπίας, κ.ά.). Ιδανική λύση για να καλύψετε ατέλειες τοίχων και να δημιουργήσετε έναν χώρο που ξεχωρίζει.',
-      before: { imageUrl: interiorBefore.src },
-      after: { imageUrl: interiorAfter.src },
+      src: '/images/decoration.jpg',
     },
     {
       id: 4,
-      title: 'Μόνωση & Βαφή Ταρατσών και Κεραμιδιών',
+      title: 'Μόνωση Ταρατσών & Βαφή Κεραμιδιών',
       description:
         'Αναλαμβάνουμε τη στεγανοποίηση και θερμομόνωση ταρατσών, καθώς και τη βαφή κεραμιδιών, προστατεύοντας το κτίριό σας από υγρασία και καιρικές καταπονήσεις. Χρησιμοποιούμε μονωτικά και ανακλαστικά χρώματα υψηλής αντοχής, για μείωση της θερμοκρασίας, εξοικονόμηση ενέργειας και μακροχρόνια προστασία.',
-      before: { imageUrl: interiorBefore.src },
-      after: { imageUrl: interiorAfter.src },
+      src: '/images/roof.jpg',
     },
   ]
   return (
@@ -67,30 +57,18 @@ export default function Services() {
                     {service.title}
                   </h1>
                   <p className="text-gray-600">{service.description}</p>
-                  <Link href="/erga">
-                    <button className="bg-neutral-500 cursor-pointer hover:scale-105 transition-all duration-300 text-white rounded-md w-max p-2 px-4">
-                      Δείτε περισσότερα έργα
-                    </button>
-                  </Link>
+                  <button className="bg-neutral-500 cursor-pointer hover:scale-105 transition-all duration-300 text-white rounded-md w-max p-2 px-4">
+                    Δείτε περισσότερα έργα
+                  </button>
                 </div>
-                {/* Slider Section */}
-                <div className="relative w-full h-80 md:h-[500px] overflow-hidden bg-gray-100">
-                  {/* Το library χρειάζεται container με συγκεκριμένο height ή να γεμίζει τον γονέα */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <ReactBeforeSliderComponent
-                      firstImage={service.before}
-                      secondImage={service.after}
-                      currentPercentPosition={50} // Ξεκινάει στη μέση
-                    />
-                  </div>
-
-                  {/* Προαιρετικά: Labels πάνω από το slider για να καταλαβαίνει ο χρήστης */}
-                  <div className="absolute top-4 left-4 bg-black/50 text-white px-2 py-1 text-xs rounded uppercase font-bold pointer-events-none">
-                    Πριν
-                  </div>
-                  <div className="absolute top-4 right-4 bg-black/50 text-white px-2 py-1 text-xs rounded uppercase font-bold pointer-events-none">
-                    Μετά
-                  </div>
+                <div className="relative w-full h-80 md:h-auto min-h-[300px]">
+                  <Image
+                    src={service.src}
+                    alt={service.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
               </div>
             ))}
