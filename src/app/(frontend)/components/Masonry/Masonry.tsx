@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { gsap } from 'gsap'
+import Image from 'next/image'
 
 const useMedia = (queries: string[], values: number[], defaultValue: number): number => {
   // Safe check for SSR
@@ -48,7 +49,7 @@ const preloadImages = async (urls: string[]): Promise<void> => {
     urls.map(
       (src) =>
         new Promise<void>((resolve) => {
-          const img = new Image()
+          const img = new window.Image()
           img.src = src
           img.onload = img.onerror = () => resolve()
         }),
@@ -236,14 +237,21 @@ const Masonry: React.FC<MasonryProps> = ({
           onMouseEnter={(e) => handleMouseEnter(item.id, e.currentTarget)}
           onMouseLeave={(e) => handleMouseLeave(item.id, e.currentTarget)}
         >
-          <div
+          {/* <div
             className="relative w-full h-full bg-cover bg-center rounded-[10px] shadow-[0px_10px_50px_-10px_rgba(0,0,0,0.2)] uppercase text-[10px] leading-[10px]"
             style={{ backgroundImage: `url(${item.img})` }}
           >
             {colorShiftOnHover && (
               <div className="color-overlay absolute inset-0 rounded-[10px] bg-gradient-to-tr from-pink-500/50 to-sky-500/50 opacity-0 pointer-events-none" />
             )}
-          </div>
+          </div> */}
+          <Image
+            src={item.img}
+            alt={item.altText}
+            width={item.w}
+            height={item.h}
+            className="w-full h-full object-cover rounded-[10px] shadow-[0px_10px_50px_-10px_rgba(0,0,0,0.2)]"
+          />
         </div>
       ))}
     </div>

@@ -1,21 +1,5 @@
 // lib/mapGalleryImages.ts
-
-interface GalleryItem {
-  id?: string
-  image: {
-    url: string
-    alt?: string
-    height?: number
-    sizes?: {
-      masonry?: {
-        url: string
-        width?: number
-        height?: number
-      }
-    }
-  }
-  height?: number
-}
+import type { GalleryItem } from './types'
 
 interface MappedGalleryItem {
   id: string
@@ -27,8 +11,7 @@ interface MappedGalleryItem {
 export function mapGalleryImages(images: GalleryItem[]): MappedGalleryItem[] {
   return images
     .map((item, index) => {
-      const imagePath = item.image.sizes?.masonry?.url || item.image.url || null // use null instead of empty string
-
+      const imagePath = item.image.sizes?.masonry?.url || item.image.url || null
       if (!imagePath) {
         console.warn('Gallery image missing URL:', item)
         return null // skip broken image

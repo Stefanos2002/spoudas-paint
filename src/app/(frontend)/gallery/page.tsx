@@ -8,7 +8,7 @@ export default async function Gallery() {
 
   // ✅ Map Payload data to Masonry format
   const masonryItems = mapGalleryImages(images)
-
+  console.log(masonryItems)
   return (
     <Masonry
       items={masonryItems}

@@ -1,15 +1,20 @@
 // lib/getGallery.ts
-export async function getGallery() {
-  const res = await fetch(
-    `${process.env.PAYLOAD_URL}/api/gallery?limit=1&depth=1`, // ✅ populate related media
-    {
-      cache: 'no-store',
-    },
-  )
+import type { GalleryItem } from './types'
 
-  const data = await res.json()
+interface GalleryResponse {
+  docs: Array<{
+    images: GalleryItem[]
+  }>
+}
 
-  if (!data.docs || data.docs.length === 0) return []
+export async function getGallery(): Promise<GalleryItem[]> {
+  const res = await fetch(`${process.env.PAYLOAD_URL}/api/gallery?limit=1&depth=2`, {
+    cache: 'no-store',
+  })
 
-  return data.docs[0].images || []
+  const data: GalleryResponse = await res.json()
+
+  if (!data.docs?.length) return []
+
+  return data.docs[0].images
 }
