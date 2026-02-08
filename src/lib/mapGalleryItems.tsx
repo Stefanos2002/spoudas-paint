@@ -1,12 +1,5 @@
 // lib/mapGalleryImages.ts
-import type { GalleryItem } from './types'
-
-interface MappedGalleryItem {
-  id: string
-  img: string
-  altText: string
-  height: number
-}
+import type { GalleryItem, MappedGalleryItem } from './types'
 
 export function mapGalleryImages(images: GalleryItem[]): MappedGalleryItem[] {
   return images

@@ -3,14 +3,25 @@ export interface GalleryDoc {
   id: number
   images: GalleryItem[]
 }
+export interface ServicesDoc {
+  id: number
+  title: string
+  description: string
+  image: ServicesItem
+}
+
+export interface ServicesItem {
+  id: number
+  alt: string
+  url: string
+  height?: number
+}
 
 export interface GalleryItem {
   id?: string
   height?: number
   image: {
     id: number
-    title: string
-    description: string
     url: string
     alt: string
     height?: number
@@ -22,4 +33,11 @@ export interface GalleryItem {
       }
     }
   }
+}
+
+export interface MappedGalleryItem {
+  id: string
+  img: string
+  altText: string
+  height: number
 }
