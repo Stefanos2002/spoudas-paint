@@ -7,6 +7,7 @@ import { GoPersonFill } from 'react-icons/go'
 import { IoIosCall } from 'react-icons/io'
 import { FaPaintRoller } from 'react-icons/fa'
 import { FaImages } from 'react-icons/fa'
+import { FiPhone } from 'react-icons/fi'
 import Image from 'next/image'
 
 export default function Navbar() {
@@ -32,13 +33,15 @@ export default function Navbar() {
         className={`text-neutral-300  ${styles.paint} text-lg flex gap-6 flex-row justify-end items-center mr-12 h-full`}
       >
         {links.map((link) => (
-          <li
-            key={link.href}
-            className={`${pathname === link.href ? 'active' : ''} flex cursor-pointer nav-link-splash flex-row items-center gap-2`}
-          >
-            <span>{link.icon}</span>
-            <Link href={link.href}>{link.label}</Link>
-          </li>
+          <Link key={link.href} href={link.href}>
+            <li
+              key={link.href}
+              className={`${pathname === link.href ? 'active' : ''} flex cursor-pointer nav-link-splash flex-row items-center gap-2`}
+            >
+              <span>{link.icon}</span>
+              <span>{link.label}</span>
+            </li>
+          </Link>
         ))}
         <li className="relative group">
           <button
@@ -52,15 +55,17 @@ export default function Navbar() {
           <div className="absolute right-0 hidden group-hover:block bg-white rounded-lg shadow-lg overflow-hidden">
             <a
               href="tel:+306973188392"
-              className="block text-[16px] px-4 py-2 text-blue-950 hover:bg-blue-100"
+              className="flex items-center gap-2 text-[16px] px-4 py-2 text-blue-950 hover:bg-blue-100"
             >
-              📞 697 318 8392
+              <FiPhone className="text-blue-900 fill-blue-900" />
+              697 318 8392
             </a>
             <a
               href="tel:+306989462660"
-              className="block text-[16px] px-4 py-2 text-blue-950 hover:bg-blue-100"
+              className="flex items-center gap-2 text-[16px] px-4 py-2 text-blue-950 hover:bg-blue-100"
             >
-              📞 698 946 2660
+              <FiPhone className="text-blue-900 fill-blue-900" />
+              698 946 2660
             </a>
           </div>
         </li>

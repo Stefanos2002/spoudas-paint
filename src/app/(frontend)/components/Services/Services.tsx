@@ -1,5 +1,6 @@
 import { getServices } from '@/lib/getServices'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default async function Services() {
   const docs = await getServices()
@@ -33,9 +34,11 @@ export default async function Services() {
                     {item.title}
                   </h1>
                   <p className="text-gray-600">{item.description}</p>
-                  <button className="bg-neutral-500 cursor-pointer hover:scale-105 transition-all duration-300 text-white rounded-md w-max p-2 px-4">
-                    Δείτε περισσότερα έργα
-                  </button>
+                  <Link href="/gallery" className="w-max">
+                    <button className="bg-neutral-500 cursor-pointer hover:scale-105 transition-all duration-300 text-white rounded-md w-max p-2 px-4">
+                      Δείτε περισσότερα έργα
+                    </button>
+                  </Link>
                 </div>
 
                 {item.image?.url && (

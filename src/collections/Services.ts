@@ -5,6 +5,20 @@ export const Services: CollectionConfig = {
   slug: 'services', // Keep the slug the same
   access: {
     read: () => true,
+    update: ({ req: { user } }) => {
+      if (!user) return false
+      return user.id === 2
+    },
+    // Create access: only for the same user
+    create: ({ req: { user } }) => {
+      if (!user) return false
+      return user.id === 2
+    },
+    // Delete access: optional
+    delete: ({ req: { user } }) => {
+      if (!user) return false
+      return user.id === 2
+    },
   },
   admin: {
     useAsTitle: 'title',
@@ -31,7 +45,7 @@ export const Services: CollectionConfig = {
     {
       name: 'height',
       type: 'number',
-      defaultValue: 1000,
+      defaultValue: 800,
     },
     {
       name: 'layoutOrder',
