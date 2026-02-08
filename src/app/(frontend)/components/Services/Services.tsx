@@ -1,36 +1,43 @@
+import { getGallery } from '@/lib/getGallery'
 import Image from 'next/image'
 
-export default function Services() {
-  const services = [
-    {
-      id: 1,
-      title: 'Μεταμόρφωση Εσωτερικών Χώρων',
-      description:
-        'Μεταμορφώνουμε τον χώρο σας γρήγορα και υπεύθυνα. Δίνουμε προτεραιότητα στην απόλυτη προστασία των επίπλων και των δαπέδων σας, παραδίδοντας τον χώρο πεντακάθαρο. Χρησιμοποιούμε οικολογικά, άοσμα χρώματα κορυφαίας ποιότητας για ένα υγιεινό και άψογο αισθητικά αποτέλεσμα.',
-      src: '/images/interior.jpg',
-    },
-    {
-      id: 2,
-      title: 'Εξωτερικοί Χρωματισμοί & Θωράκιση Προσόψεων',
-      description:
-        'Προστατέψτε το κτίριό σας από την υγρασία και τον χρόνο. Αναλαμβάνουμε την αποκατάσταση ρωγμών, τη μόνωση και τη βαφή εξωτερικών τοίχων με ειδικά ακρυλικά και ελαστομερή χρώματα αντοχής. Διαθέτουμε τον κατάλληλο εξοπλισμό για ασφαλή εργασία σε κάθε ύψος.',
-      src: '/images/exterior.jpg',
-    },
-    {
-      id: 3,
-      title: 'Υγρή Ταπετσαρία & Μοντέρνες Τεχνοτροπίες',
-      description:
-        'Δώστε χαρακτήρα και πολυτέλεια στους τοίχους σας. Εφαρμόζουμε υγρή ταπετσαρία που προσφέρει θερμομόνωση και ηχομόνωση, καθώς και ιδιαίτερες τεχνοτροπίες (πατητή τσιμεντοκονία, ψηφίδα τεχνοτροπίας, κ.ά.). Ιδανική λύση για να καλύψετε ατέλειες τοίχων και να δημιουργήσετε έναν χώρο που ξεχωρίζει.',
-      src: '/images/decoration.jpg',
-    },
-    {
-      id: 4,
-      title: 'Μόνωση Ταρατσών & Βαφή Κεραμιδιών',
-      description:
-        'Αναλαμβάνουμε τη στεγανοποίηση και θερμομόνωση ταρατσών, καθώς και τη βαφή κεραμιδιών, προστατεύοντας το κτίριό σας από υγρασία και καιρικές καταπονήσεις. Χρησιμοποιούμε μονωτικά και ανακλαστικά χρώματα υψηλής αντοχής, για μείωση της θερμοκρασίας, εξοικονόμηση ενέργειας και μακροχρόνια προστασία.',
-      src: '/images/roof.jpg',
-    },
-  ]
+export default async function Services() {
+  const docs = await getGallery()
+  const servicesDoc = docs.filter((doc) => doc.id === 3)
+  const selectors = servicesDoc.flatMap((doc) => doc.images)
+  const images = selectors.map((item) => item.image)
+  console.log('services images', images)
+
+  // const services = [
+  //   {
+  //     id: 1,
+  //     title: 'Μεταμόρφωση Εσωτερικών Χώρων',
+  //     description:
+  //       'Μεταμορφώνουμε τον χώρο σας γρήγορα και υπεύθυνα. Δίνουμε προτεραιότητα στην απόλυτη προστασία των επίπλων και των δαπέδων σας, παραδίδοντας τον χώρο πεντακάθαρο. Χρησιμοποιούμε οικολογικά, άοσμα χρώματα κορυφαίας ποιότητας για ένα υγιεινό και άψογο αισθητικά αποτέλεσμα.',
+  //     src: '/images/interior.jpg',
+  //   },
+  //   {
+  //     id: 2,
+  //     title: 'Εξωτερικοί Χρωματισμοί & Θωράκιση Προσόψεων',
+  //     description:
+  //       'Προστατέψτε το κτίριό σας από την υγρασία και τον χρόνο. Αναλαμβάνουμε την αποκατάσταση ρωγμών, τη μόνωση και τη βαφή εξωτερικών τοίχων με ειδικά ακρυλικά και ελαστομερή χρώματα αντοχής. Διαθέτουμε τον κατάλληλο εξοπλισμό για ασφαλή εργασία σε κάθε ύψος.',
+  //     src: '/images/exterior.jpg',
+  //   },
+  //   {
+  //     id: 3,
+  //     title: 'Υγρή Ταπετσαρία & Μοντέρνες Τεχνοτροπίες',
+  //     description:
+  //       'Δώστε χαρακτήρα και πολυτέλεια στους τοίχους σας. Εφαρμόζουμε υγρή ταπετσαρία που προσφέρει θερμομόνωση και ηχομόνωση, καθώς και ιδιαίτερες τεχνοτροπίες (πατητή τσιμεντοκονία, ψηφίδα τεχνοτροπίας, κ.ά.). Ιδανική λύση για να καλύψετε ατέλειες τοίχων και να δημιουργήσετε έναν χώρο που ξεχωρίζει.',
+  //     src: '/images/decoration.jpg',
+  //   },
+  //   {
+  //     id: 4,
+  //     title: 'Μόνωση Ταρατσών & Βαφή Κεραμιδιών',
+  //     description:
+  //       'Αναλαμβάνουμε τη στεγανοποίηση και θερμομόνωση ταρατσών, καθώς και τη βαφή κεραμιδιών, προστατεύοντας το κτίριό σας από υγρασία και καιρικές καταπονήσεις. Χρησιμοποιούμε μονωτικά και ανακλαστικά χρώματα υψηλής αντοχής, για μείωση της θερμοκρασίας, εξοικονόμηση ενέργειας και μακροχρόνια προστασία.',
+  //     src: '/images/roof.jpg',
+  //   },
+  // ]
   return (
     <main id="υπηρεσίες" className="relative z-10 -mt-20 md:-mt-12 pb-10 flex flex-col">
       <div className="bg-white rounded-t-[2.5rem] md:rounded-t-[3rem] shadow-[0_-15px_40px_-10px_rgba(0,0,0,0.15)] pt-16 md:pt-24 overflow-hidden">
@@ -47,24 +54,24 @@ export default function Services() {
         </div>
         {/* Services */}
         <div className="w-full">
-          {services.length > 0 &&
-            services.map((service) => (
-              <div key={service.id} className="grid grid-cols-1 md:grid-cols-2 w-full">
+          {images.length > 0 &&
+            images.map((item) => (
+              <div key={item.id} className="grid grid-cols-1 md:grid-cols-2 w-full">
                 <div
-                  className={`${service.id % 2 === 0 ? 'order-last' : 'order-first'} p-10 md:p-20 flex flex-col justify-center gap-7 leading-8 text-lg`}
+                  className={`${item.id % 2 === 0 ? 'order-last' : 'order-first'} p-10 md:p-20 flex flex-col justify-center gap-7 leading-8 text-lg`}
                 >
                   <h1 className="font-black tracking-tight text-3xl md:text-4xl text-blue-950">
-                    {service.title}
+                    {item.title}
                   </h1>
-                  <p className="text-gray-600">{service.description}</p>
+                  <p className="text-gray-600">{item.description}</p>
                   <button className="bg-neutral-500 cursor-pointer hover:scale-105 transition-all duration-300 text-white rounded-md w-max p-2 px-4">
                     Δείτε περισσότερα έργα
                   </button>
                 </div>
                 <div className="relative w-full h-80 md:h-auto min-h-[300px]">
                   <Image
-                    src={service.src}
-                    alt={service.title}
+                    src={item.url}
+                    alt={item.alt}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 50vw"

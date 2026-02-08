@@ -3,12 +3,13 @@ import { getGallery } from '@/lib/getGallery'
 import { mapGalleryImages } from '@/lib/mapGalleryItems'
 
 export default async function Gallery() {
-  // ✅ Fetch gallery images from Payload (server-side)
-  const images = await getGallery()
-
-  // ✅ Map Payload data to Masonry format
+  // Fetch galleries from Payload CMS
+  const docs = await getGallery()
+  //get the images
+  const images = docs.flatMap((doc) => doc.images)
+  // Map Payload data to Masonry format
   const masonryItems = mapGalleryImages(images)
-  console.log(masonryItems)
+
   return (
     <Masonry
       items={masonryItems}

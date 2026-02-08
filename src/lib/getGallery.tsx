@@ -1,14 +1,12 @@
 // lib/getGallery.ts
-import type { GalleryItem } from './types'
+import type { GalleryItem, GalleryDoc } from './types'
 
 interface GalleryResponse {
-  docs: Array<{
-    images: GalleryItem[]
-  }>
+  docs: GalleryDoc[]
 }
 
-export async function getGallery(): Promise<GalleryItem[]> {
-  const res = await fetch(`${process.env.PAYLOAD_URL}/api/gallery?limit=1&depth=2`, {
+export async function getGallery(): Promise<GalleryDoc[]> {
+  const res = await fetch(`${process.env.PAYLOAD_URL}/api/gallery?depth=2`, {
     cache: 'no-store',
   })
 
@@ -16,5 +14,6 @@ export async function getGallery(): Promise<GalleryItem[]> {
 
   if (!data.docs?.length) return []
 
-  return data.docs[0].images
+  // flatmap για να επιστρψει ολα τα galleries
+  return data.docs
 }
