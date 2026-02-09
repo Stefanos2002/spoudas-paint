@@ -226,12 +226,12 @@ const Masonry: React.FC<MasonryProps> = ({
   }
 
   return (
-    <div ref={containerRef} className="relative w-full h-full">
+    <div ref={containerRef} className="relative w-full min-h-screen">
       {grid.map((item) => (
         <div
           key={item.id}
           data-key={item.id}
-          className="absolute mt-30 box-content cursor-pointer"
+          className="absolute mt-4 box-content cursor-pointer"
           style={{ willChange: 'transform, width, height, opacity' }}
           // onClick={() => {}}
           onMouseEnter={(e) => handleMouseEnter(item.id, e.currentTarget)}

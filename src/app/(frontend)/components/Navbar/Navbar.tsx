@@ -46,7 +46,7 @@ export default function Navbar() {
         <li className="relative group">
           <button
             className="flex cursor-pointer items-center bg-blue-700 text-white p-2 px-4 rounded-full gap-2
-    transition-all duration-300 hover:scale-105"
+    "
           >
             <IoIosCall />
             <span>Καλέστε μας</span>
