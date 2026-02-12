@@ -34,7 +34,7 @@ export default async function Services() {
                     {item.title}
                   </h1>
                   <p className="text-gray-600">{item.description}</p>
-                  <Link href="/gallery" className="w-max">
+                  <Link href={`/gallery/${item.slug}`} className="w-max">
                     <button className="bg-neutral-500 cursor-pointer hover:scale-105 transition-all duration-300 text-white rounded-md w-max p-2 px-4">
                       Δείτε περισσότερα έργα
                     </button>

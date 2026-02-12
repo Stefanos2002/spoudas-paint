@@ -16,6 +16,12 @@ export const Gallery: CollectionConfig = {
       required: true,
     },
     {
+      name: 'slug',
+      type: 'text',
+      unique: true,
+      required: true,
+    },
+    {
       name: 'images',
       type: 'array',
       fields: [

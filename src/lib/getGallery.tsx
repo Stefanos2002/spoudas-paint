@@ -5,15 +5,14 @@ interface GalleryResponse {
   docs: GalleryDoc[]
 }
 
-export async function getGallery(): Promise<GalleryDoc[]> {
-  const res = await fetch(`${process.env.PAYLOAD_URL}/api/gallery?depth=2`, {
-    cache: 'no-store',
-  })
+export async function getGallery(slug?: string): Promise<GalleryDoc[]> {
+  const url = new URL(`${process.env.PAYLOAD_URL}/api/gallery?depth=2`) // notice plural
+  if (slug) url.searchParams.set('where[slug][equals]', slug)
 
+  const res = await fetch(url.toString(), { cache: 'no-store' })
   const data: GalleryResponse = await res.json()
 
   if (!data.docs?.length) return []
 
-  // flatmap για να επιστρψει ολα τα galleries
   return data.docs
 }

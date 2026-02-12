@@ -1,20 +1,24 @@
-// lib/mapGalleryImages.ts
 import type { GalleryItem, MappedGalleryItem } from './types'
-
 export function mapGalleryImages(images: GalleryItem[]): MappedGalleryItem[] {
   return images
     .map((item, index) => {
-      const imagePath = item.image.sizes?.masonry?.url || item.image.url || null
-      if (!imagePath) {
-        console.warn('Gallery image missing URL:', item)
-        return null // skip broken image
+      const masonrySize = item.image.sizes?.masonry
+
+      const src = masonrySize?.url || item.image.url
+      const width = masonrySize?.width || item.image.width
+      const height = masonrySize?.height || item.image.height
+
+      if (!src || !width || !height) {
+        console.warn('Gallery image missing dimensions:', item)
+        return null
       }
 
       return {
         id: item.id ?? String(index),
-        img: `${process.env.PAYLOAD_URL}${imagePath}`,
+        img: `${process.env.PAYLOAD_URL}${src}`,
         altText: item.image.alt ?? `Gallery image ${index + 1}`,
-        height: item.height ?? item.image.height ?? 500,
+        width: width,
+        height: height,
       }
     })
     .filter(Boolean) as MappedGalleryItem[]

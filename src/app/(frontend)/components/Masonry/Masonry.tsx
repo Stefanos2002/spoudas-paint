@@ -57,11 +57,12 @@ const preloadImages = async (urls: string[]): Promise<void> => {
   )
 }
 
-interface Item {
+export interface Item {
   id: string
   img: string
   altText: string
   height: number
+  onClick?: () => void
 }
 
 interface GridItem extends Item {
@@ -230,6 +231,7 @@ const Masonry: React.FC<MasonryProps> = ({
       {grid.map((item) => (
         <div
           key={item.id}
+          onClick={item.onClick}
           data-key={item.id}
           className="absolute mt-4 box-content cursor-pointer"
           style={{ willChange: 'transform, width, height, opacity' }}

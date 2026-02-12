@@ -180,6 +180,7 @@ export interface Media {
 export interface Gallery {
   id: number;
   title: string;
+  slug: string;
   images?:
     | {
         image: number | Media;
@@ -197,6 +198,7 @@ export interface Gallery {
 export interface Service {
   id: number;
   title: string;
+  slug: string;
   description?: string | null;
   image: number | Media;
   height?: number | null;
@@ -346,6 +348,7 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface GallerySelect<T extends boolean = true> {
   title?: T;
+  slug?: T;
   images?:
     | T
     | {
@@ -362,6 +365,7 @@ export interface GallerySelect<T extends boolean = true> {
  */
 export interface ServicesSelect<T extends boolean = true> {
   title?: T;
+  slug?: T;
   description?: T;
   image?: T;
   height?: T;
