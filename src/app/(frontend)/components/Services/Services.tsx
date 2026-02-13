@@ -6,7 +6,7 @@ export default async function Services() {
   const docs = await getServices()
 
   return (
-    <main id="υπηρεσίες" className="relative z-10 -mt-20 md:-mt-12 pb-10 flex flex-col">
+    <main id="υπηρεσίες" className="relative z-10 -mt-20 md:-mt-12 flex flex-col">
       <div className="bg-white rounded-t-[2.5rem] md:rounded-t-[3rem] shadow-[0_-15px_40px_-10px_rgba(0,0,0,0.15)] pt-16 md:pt-24 overflow-hidden">
         <div className="text-center max-w-2xl mx-auto px-6 mb-20">
           <span className="text-blue-600 font-bold tracking-widest text-sm uppercase mb-2 block">

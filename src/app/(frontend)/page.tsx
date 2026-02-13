@@ -3,6 +3,7 @@ import config from '@/payload.config'
 import React from 'react'
 import Banner from './components/Banner/Banner'
 import Services from './components/Services/Services'
+import Team from './components/Team/Team'
 
 export default async function HomePage() {
   const payloadConfig = await config
@@ -17,6 +18,7 @@ export default async function HomePage() {
     <>
       <Banner />
       <Services />
+      <Team />
     </>
   )
 }

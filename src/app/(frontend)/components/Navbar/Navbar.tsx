@@ -13,7 +13,7 @@ import Image from 'next/image'
 export default function Navbar() {
   const pathname = usePathname()
   const links = [
-    { href: '/', label: 'Αρχική', icon: <FaHome /> },
+    { href: '/#αρχική', label: 'Αρχική', icon: <FaHome /> },
     { href: '/#υπηρεσίες', label: 'Υπηρεσίες', icon: <FaPaintRoller /> },
     { href: '/gallery', label: 'Τα Εργα μας', icon: <FaImages /> },
     { href: '/#ομάδα', label: 'Γνωρίστε μας', icon: <GoPersonFill /> },
@@ -45,7 +45,7 @@ export default function Navbar() {
         ))}
         <li className="relative group">
           <button
-            className="flex cursor-pointer items-center bg-blue-700 text-white p-2 px-4 rounded-full gap-2
+            className="flex cursor-pointer group-hover:bg-slate-600 items-center transition-all duration-200 bg-blue-700 text-white p-2 px-4 rounded-full gap-2
     "
           >
             <IoIosCall />
