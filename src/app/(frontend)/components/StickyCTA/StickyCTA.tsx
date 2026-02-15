@@ -17,7 +17,7 @@ export default function StickyCTA() {
 
   return (
     <Link
-      href="/ραντεβου"
+      href="#"
       className={`
         fixed bottom-6 right-6 z-50
         rounded-full bg-blue-950 px-6 py-4 text-white font-semibold shadow-xl
