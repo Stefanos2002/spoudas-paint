@@ -1,5 +1,4 @@
 import { getGallery } from '@/lib/getGallery'
-import Sort from '../../components/Sort/Sort'
 import { mapGalleryImages } from '@/lib/mapGalleryItems'
 import GalleryClient from '../../components/Lightbox/GalleryClient'
 

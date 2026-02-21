@@ -3,8 +3,8 @@ import { IoMdArrowDropdown } from 'react-icons/io'
 
 export default function Sort() {
   return (
-    <div className="mt-28 absolute group w-max z-10">
-      <button className="flex bg-blue-950/95 backdrop-blur shadow-xl cursor-pointer items-center gap-1 text-md p-3 px-5 text-neutral-100 rounded-full">
+    <div className="mt-24 absolute group w-max z-10">
+      <button className="flex bg-blue-950/95 backdrop-blur shadow-xl cursor-pointer items-center gap-1 text-md p-3 px-5 text-white rounded-full">
         Φίλτρο Εμφάνισης <IoMdArrowDropdown />
       </button>
       {/* dropdown */}

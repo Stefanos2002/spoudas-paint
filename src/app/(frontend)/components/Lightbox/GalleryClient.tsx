@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Masonry, { Item } from '../Masonry/Masonry'
 import Sort from '../Sort/Sort'
 import Lightbox from './Lightbox'
+import Footer from '../Footer/Footer'
 
 export default function GalleryClient({ items }: { items: Item[] }) {
   const [isOpen, setIsOpen] = useState(false)

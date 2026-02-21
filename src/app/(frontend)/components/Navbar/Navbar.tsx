@@ -24,7 +24,7 @@ export default function Navbar() {
         <Image src="/images/logo-splash.png" alt="logo-splash" width={100} height={100} />
         <div className="flex flex-col -translate-x-10 justify-center">
           <h1 className="text-white text-3xl font-black tracking-tighter leading-none">ΣΠΟΥΔΑΣ</h1>
-          <span className="text-blue-100 bg-blue-700 p-1 text-xs font-semibold tracking-wider uppercase mt-1">
+          <span className="text-blue-100 text-center bg-blue-700 p-1 text-xs font-semibold tracking-wider uppercase mt-1">
             ΧΡΩΜΑ & ΔΙΑΚΟΣΜΗΣΗ
           </span>
         </div>

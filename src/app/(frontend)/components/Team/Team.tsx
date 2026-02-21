@@ -1,23 +1,10 @@
+import { getTeam } from '@/lib/getTeam'
 import Image from 'next/image'
 
-const team = [
-  {
-    name: 'Χρήστος Σπούδας',
-    role: 'Ιδρυτής & Τεχνικός Βαφών',
-    description: 'Με πάνω από 30 χρόνια εμπειρίας στον χώρο της βαφής και διακόσμησης.',
-    image: '/images/xrhstos.png',
-  },
-  {
-    name: 'Διονύσης Σπούδας',
-    role: 'Τεχνικός Βαφών',
-    description: 'Εξειδίκευση σε σύγχρονες τεχνικές βαφής και ανακαινίσεις χώρων.',
-    image: '/images/dionysis.png',
-  },
-]
-
-export default function Team() {
+export default async function Team() {
+  const team = await getTeam()
   return (
-    <main id="ομάδα" className="bg-white pt-20 pb-24">
+    <main id="ομάδα" className="bg-white pt-20 pb-18">
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
         <div className="mb-16">
@@ -36,18 +23,20 @@ export default function Team() {
         </div>
         {/* Team */}
         <div className="grid md:grid-cols-2 gap-12">
-          {team.map((member, index) => (
+          {team.map((member) => (
             <div
-              key={index}
+              key={member.id}
               className="text-center hover:scale-105 duration-500 bg-gray-50 p-8 rounded-3xl shadow-sm hover:shadow-md transition"
             >
-              <Image
-                src={member.image}
-                alt={member.name}
-                width={260}
-                height={260}
-                className="mx-auto rounded-full mb-6 object-cover"
-              />
+              {member.image?.url && (
+                <Image
+                  src={member.image.url}
+                  alt={member.image.alt}
+                  width={260}
+                  height={260}
+                  className="mx-auto rounded-full mb-6 object-cover"
+                />
+              )}
 
               <h3 className="text-xl font-bold text-blue-950">{member.name}</h3>
 

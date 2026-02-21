@@ -3,6 +3,7 @@ export interface GalleryDoc {
   id: number
   images: GalleryItem[]
 }
+
 export interface ServicesDoc {
   id: number
   title: string
@@ -10,8 +11,22 @@ export interface ServicesDoc {
   description: string
   image: ServicesItem
 }
-
 export interface ServicesItem {
+  id: number
+  alt: string
+  url: string
+  height?: number
+}
+
+export interface TeamDoc {
+  id: number
+  name: string
+  role: string
+  description: string
+  image: TeamMember
+}
+
+export interface TeamMember {
   id: number
   alt: string
   url: string
