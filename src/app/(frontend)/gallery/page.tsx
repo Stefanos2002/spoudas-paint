@@ -10,7 +10,7 @@ export default async function Gallery() {
   const masonryItems = mapGalleryImages(images)
 
   return (
-    <div className="flex flex-col p-4">
+    <div className="flex flex-col p-4 min-h-[415vh]">
       <GalleryClient items={masonryItems} />
     </div>
   )
