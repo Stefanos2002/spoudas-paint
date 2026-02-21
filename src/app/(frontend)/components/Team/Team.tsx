@@ -4,7 +4,7 @@ const team = [
   {
     name: 'Χρήστος Σπούδας',
     role: 'Ιδρυτής & Τεχνικός Βαφών',
-    description: 'Με πάνω από 25 χρόνια εμπειρίας στον χώρο της βαφής και διακόσμησης.',
+    description: 'Με πάνω από 30 χρόνια εμπειρίας στον χώρο της βαφής και διακόσμησης.',
     image: '/images/xrhstos.png',
   },
   {
@@ -34,7 +34,6 @@ export default function Team() {
             μας είναι να δημιουργούμε χώρους που ξεχωρίζουν.
           </p>
         </div>
-
         {/* Team */}
         <div className="grid md:grid-cols-2 gap-12">
           {team.map((member, index) => (
@@ -63,7 +62,7 @@ export default function Team() {
         <div className="mt-20 grid sm:grid-cols-2 md:grid-cols-4 gap-6">
           <div className="flex items-center hover:scale-105 transition-all duration-400 gap-3 bg-blue-900 p-4 rounded-xl justify-center">
             <span className="text-white text-xl">✔</span>
-            <p className="font-medium text-white">25+ Χρόνια Εμπειρίας</p>
+            <p className="font-medium text-white">30+ Χρόνια Εμπειρίας</p>
           </div>
 
           <div className="flex items-center hover:scale-105 transition-all duration-400 gap-3 bg-blue-900 p-4 rounded-xl justify-center">
