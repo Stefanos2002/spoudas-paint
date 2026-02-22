@@ -45,7 +45,7 @@ export default function Navbar() {
         ))}
         <li className="relative group">
           <button
-            className="flex cursor-pointer group-hover:bg-slate-600 items-center transition-all duration-200 bg-blue-700 text-white p-2 px-4 rounded-full gap-2
+            className="flex cursor-pointer group-hover:bg-blue-800 items-center transition-all duration-200 bg-blue-700 text-white p-2 px-4 rounded-full gap-2
     "
           >
             <IoIosCall />

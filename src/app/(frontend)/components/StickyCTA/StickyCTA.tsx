@@ -27,11 +27,11 @@ export default function StickyCTA() {
 
   return (
     <Link
-      href="#"
+      href="/rantevou"
       className={`
         fixed bottom-6 right-6 z-50
         rounded-full bg-blue-950 px-6 py-4 transition-all text-white font-semibold shadow-xl
-        hover:bg-slate-600
+        hover:bg-blue-800
         ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}
       `}
     >

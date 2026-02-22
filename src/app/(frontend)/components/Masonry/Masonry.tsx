@@ -2,7 +2,6 @@
 import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import Image from 'next/image'
-import Footer from '../Footer/Footer'
 
 const useMedia = (queries: string[], values: number[], defaultValue: number): number => {
   // Safe check for SSR
@@ -102,7 +101,9 @@ const Masonry: React.FC<MasonryProps> = ({
     1,
   )
 
+  // used for footer adjustment
   const [containerHeight, setContainerHeight] = useState(0)
+
   const [containerRef, { width }] = useMeasure<HTMLDivElement>()
   const [imagesReady, setImagesReady] = useState(false)
 
@@ -156,6 +157,15 @@ const Masonry: React.FC<MasonryProps> = ({
       return { ...child, x, y, w: columnWidth, h: height }
     })
   }, [columns, items, width])
+
+  // used for footer adjustment
+  useEffect(() => {
+    if (!grid.length) return
+    const maxHeight = Math.max(...grid.map((item) => item.y + item.h))
+    const EXTRA_SPACE = 90
+
+    setContainerHeight(maxHeight + EXTRA_SPACE)
+  }, [grid])
 
   const hasMounted = useRef(false)
 
@@ -229,7 +239,7 @@ const Masonry: React.FC<MasonryProps> = ({
   }
 
   return (
-    <div ref={containerRef} className="relative mt-22 w-full min-h-screen">
+    <div ref={containerRef} className="relative mt-22 w-full" style={{ height: containerHeight }}>
       {grid.map((item) => (
         <div
           key={item.id}
