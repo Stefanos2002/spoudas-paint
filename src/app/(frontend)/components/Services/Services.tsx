@@ -28,7 +28,7 @@ export default async function Services() {
                 <div
                   className={`${
                     index % 2 === 0 ? 'order-last' : 'order-first'
-                  } p-10 md:p-20 flex flex-col justify-center gap-7 leading-8 text-lg`}
+                  } p-8 flex flex-col justify-center gap-7 leading-8 text-lg`}
                 >
                   <h1 className="font-black tracking-tight text-3xl md:text-4xl text-blue-950">
                     {item.title}
@@ -42,7 +42,7 @@ export default async function Services() {
                 </div>
 
                 {item.image?.url && (
-                  <div className="relative w-full h-80 md:h-auto min-h-[300px]">
+                  <div className="relative w-full h-120">
                     <Image
                       src={item.image.url}
                       alt={item.image.alt || 'Service Image'}

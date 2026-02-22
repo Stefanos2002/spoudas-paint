@@ -30,7 +30,7 @@ export default function Navbar() {
         </div>
       </div>
       <ul
-        className={`text-neutral-300  ${styles.paint} text-lg flex gap-6 flex-row justify-end items-center mr-12 h-full`}
+        className={`text-neutral-300  ${styles.paint} text-lg flex gap-4 flex-row justify-end items-center mr-6 h-full`}
       >
         {links.map((link) => (
           <Link key={link.href} href={link.href}>
