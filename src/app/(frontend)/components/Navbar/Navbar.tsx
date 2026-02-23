@@ -8,10 +8,16 @@ import { IoIosCall } from 'react-icons/io'
 import { FaPaintRoller } from 'react-icons/fa'
 import { FaImages } from 'react-icons/fa'
 import { FiPhone } from 'react-icons/fi'
+import { HiMenu, HiX } from 'react-icons/hi'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false)
   const pathname = usePathname()
+  useEffect(() => {
+    setOpen(false)
+  }, [pathname])
   const links = [
     { href: '/#αρχική', label: 'Αρχική', icon: <FaHome /> },
     { href: '/#υπηρεσίες', label: 'Υπηρεσίες', icon: <FaPaintRoller /> },
@@ -30,7 +36,7 @@ export default function Navbar() {
         </div>
       </div>
       <ul
-        className={`text-neutral-300  ${styles.paint} text-lg flex gap-4 flex-row justify-end items-center mr-6 h-full`}
+        className={`text-neutral-300 max-[1150px]:hidden flex ${styles.paint} text-lg gap-4 flex-row justify-end items-center mr-6 h-full`}
       >
         {links.map((link) => (
           <Link key={link.href} href={link.href}>
@@ -70,6 +76,48 @@ export default function Navbar() {
           </div>
         </li>
       </ul>
+      {/* Hamburger */}
+      <button
+        className="hidden cursor-pointer max-[1150px]:block mr-6 z-50 text-white text-[2.6rem]"
+        onClick={() => setOpen(!open)}
+      >
+        {open ? <HiX /> : <HiMenu />}
+      </button>
+      {/* Mobile Menu */}
+      <div
+        className={`fixed top-0 right-0 h-screen w-60 bg-blue-950 transform transition-transform duration-300 hidden max-[1150px]:block ${
+          open ? 'translate-x-0' : 'translate-x-full'
+        }`}
+      >
+        <div className="flex flex-col gap-6 p-6 pt-24 text-white text-lg">
+          {links.map((link) => (
+            <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>
+              <div className="flex items-center gap-3">
+                {link.icon}
+                {link.label}
+              </div>
+            </Link>
+          ))}
+
+          <div className="border-t border-blue-800 pt-4 flex flex-col gap-3">
+            <a
+              href="tel:+306973188392"
+              className="flex items-center gap-2 bg-blue-700 px-4 py-2 rounded-lg"
+            >
+              <FiPhone />
+              697 318 8392
+            </a>
+
+            <a
+              href="tel:+306989462660"
+              className="flex items-center gap-2 bg-blue-700 px-4 py-2 rounded-lg"
+            >
+              <FiPhone />
+              698 946 2660
+            </a>
+          </div>
+        </div>
+      </div>
     </nav>
   )
 }

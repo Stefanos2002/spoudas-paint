@@ -1,7 +1,7 @@
 // import styles from './page.module.css'
 export default function Page() {
   return (
-    <main className="min-h-screen bg-yellow-100 flex items-center justify-center px-4 pb-14 pt-38">
+    <main className="min-h-screen bg-blue-50 flex items-center justify-center px-4 pb-14 pt-38">
       <div className="w-full max-w-xl bg-white rounded-2xl shadow-lg p-8">
         <h1 className={`text-2xl mb-2 text-center`}>Κλείστε Ραντεβού</h1>
 

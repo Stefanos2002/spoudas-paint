@@ -9,8 +9,13 @@ export default function StickyCTA() {
   const pathname = usePathname()
 
   const isHome = pathname === '/'
+  const isBooking = pathname === '/rantevou'
 
   useEffect(() => {
+    if (isBooking) {
+      setVisible(false)
+      return
+    }
     if (!isHome) {
       setVisible(true)
       return
@@ -23,14 +28,14 @@ export default function StickyCTA() {
     handleScroll()
 
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [isHome])
+  }, [isHome, isBooking])
 
   return (
     <Link
       href="/rantevou"
       className={`
         fixed bottom-6 right-6 z-50
-        rounded-full bg-blue-950 px-6 py-4 transition-all text-white font-semibold shadow-xl
+        rounded-full bg-blue-900 px-6 py-4 transition-all text-white shadow-xl
         hover:bg-blue-800
         ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}
       `}
