@@ -4,11 +4,9 @@ export default function Page() {
     <main className="min-h-screen bg-blue-50 flex items-center justify-center px-4 pb-14 pt-38">
       <div className="w-full max-w-xl bg-white rounded-2xl shadow-lg p-8">
         <h1 className={`text-2xl mb-2 text-center`}>Κλείστε Ραντεβού</h1>
-
         <p className="text-neutral-600 text-center mb-6">
           Συμπληρώστε τα στοιχεία σας και θα επικοινωνήσουμε μαζί σας σύντομα.
         </p>
-
         <form className="space-y-4">
           {/* Όνομα */}
           <div>
@@ -20,7 +18,6 @@ export default function Page() {
               placeholder="π.χ. Γιάννης Παπαδόπουλος"
             />
           </div>
-
           {/* Τηλέφωνο */}
           <div>
             <label className="block text-sm font-medium mb-1">Τηλέφωνο</label>
@@ -31,7 +28,6 @@ export default function Page() {
               placeholder="π.χ. 69XXXXXXXX"
             />
           </div>
-
           {/* Περιοχή */}
           <div>
             <label className="block text-sm font-medium mb-1">Περιοχή</label>
@@ -42,11 +38,9 @@ export default function Page() {
               placeholder="π.χ. Σπάρτη"
             />
           </div>
-
           {/* Υπηρεσία */}
           <div className="space-y-3">
             <label className="font-medium">Υπηρεσίες</label>
-
             <div className="mt-1 grid gap-2">
               {[
                 'Βάψιμο Εσωτερικών / Εξωτερικών Χώρων',
@@ -65,12 +59,10 @@ export default function Page() {
                 </label>
               ))}
             </div>
-
             <p className="text-xs text-neutral-500">
               Περιλαμβάνονται όλες οι απαραίτητες εργασίες προετοιμασίας (σπατουλάρισμα κ.λπ.).
             </p>
           </div>
-
           {/* Μήνυμα */}
           <div>
             <label className="block text-sm font-medium mb-1">Μήνυμα (προαιρετικό)</label>
@@ -80,7 +72,6 @@ export default function Page() {
               placeholder="Περιγράψτε σύντομα την εργασία..."
             />
           </div>
-
           {/* Button */}
           <button
             type="submit"
