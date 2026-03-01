@@ -12,9 +12,11 @@ export default async function Services() {
           <span className="text-blue-600 font-bold tracking-widest text-sm uppercase mb-2 block">
             Τι προσφερουμε
           </span>
-          <h1 className="font-bold text-5xl tracking-tight text-blue-950 mb-6">Υπηρεσίες</h1>
+          <h1 className="font-bold text-4xl lg:text-5xl tracking-tight text-blue-950 mb-6">
+            Υπηρεσίες
+          </h1>
           <div className="w-24 h-1.5 bg-blue-600 mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-600 text-lg">
+          <p className="text-gray-600 text-md sm:text-lg">
             Ολοκληρωμένες λύσεις ελαιοχρωματισμού και ανακαίνισης, προσαρμοσμένες στις ανάγκες του
             χώρου σας με έμφαση στην ποιότητα.
           </p>
