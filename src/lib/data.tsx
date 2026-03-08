@@ -1,8 +1,14 @@
-import { FaHome, FaImages, FaPaintRoller } from 'react-icons/fa'
+// lib/data.tsx
+import { ReactElement } from 'react'
+import { FaImages, FaPaintRoller } from 'react-icons/fa'
 import { GoPersonFill } from 'react-icons/go'
-export const links = [
-  { href: '/#αρχική', label: 'Αρχική', icon: <FaHome /> },
-  { href: '/#υπηρεσίες', label: 'Υπηρεσίες', icon: <FaPaintRoller /> },
+
+export type NavLink =
+  | { target: string; label: string; icon: ReactElement } // same-page scroll
+  | { href: string; label: string; icon: ReactElement } // external page link
+
+export const links: NavLink[] = [
+  { target: 'υπηρεσίες', label: 'Υπηρεσίες', icon: <FaPaintRoller /> },
   { href: '/gallery', label: 'Τα Εργα μας', icon: <FaImages /> },
-  { href: '/#ομάδα', label: 'Γνωρίστε μας', icon: <GoPersonFill /> },
+  { target: 'ομάδα', label: 'Γνωρίστε μας', icon: <GoPersonFill /> },
 ]

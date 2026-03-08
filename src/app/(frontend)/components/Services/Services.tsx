@@ -1,22 +1,25 @@
 import { getServices } from '@/lib/getServices'
 import Image from 'next/image'
 import Link from 'next/link'
+import styles from './Services.module.css'
 
 export default async function Services() {
   const docs = await getServices()
 
   return (
     <main id="υπηρεσίες" className="relative z-10 -mt-20 md:-mt-12 flex flex-col">
-      <div className="bg-white rounded-t-[2.5rem] md:rounded-t-[3rem] shadow-[0_-15px_40px_-10px_rgba(0,0,0,0.15)] pt-16 md:pt-24 overflow-hidden">
+      <div
+        className={`bg-white border-t-24 ${styles.design} border-neutral-100 rounded-t-[2.5rem] md:rounded-t-[3rem] shadow-md pt-16 md:pt-24 overflow-hidden`}
+      >
         <div className="text-center max-w-2xl mx-auto px-6 mb-20">
           <span className="text-blue-600 font-bold tracking-widest text-sm uppercase mb-2 block">
             Τι προσφερουμε
           </span>
-          <h1 className="font-bold text-4xl lg:text-5xl tracking-tight text-blue-950 mb-6">
+          <h1 className="font-bold text-4xl lg:text-[2.5rem] tracking-tight text-blue-950 mb-6">
             Υπηρεσίες
           </h1>
           <div className="w-24 h-1.5 bg-blue-600 mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-600 text-md sm:text-lg">
+          <p className="text-gray-600 text-md sm:text-[1.1rem]">
             Ολοκληρωμένες λύσεις ελαιοχρωματισμού και ανακαίνισης, προσαρμοσμένες στις ανάγκες του
             χώρου σας με έμφαση στην ποιότητα.
           </p>
@@ -30,14 +33,26 @@ export default async function Services() {
                 <div
                   className={`${
                     index % 2 === 0 ? 'order-last' : 'order-first'
-                  } p-8 flex flex-col justify-center gap-7 leading-8 text-lg`}
+                  } p-8 flex flex-col justify-center gap-7 leading-7 text-lg`}
                 >
-                  <h1 className="font-black tracking-tight text-3xl md:text-4xl text-blue-950">
+                  <h1 className="font-black tracking-tight text-3xl md:text-[2.2rem] text-blue-950">
                     {item.title}
                   </h1>
-                  <p className="text-gray-600">{item.description}</p>
+                  <p className="text-gray-600 text-[1.1rem]">{item.description}</p>
                   <Link href={`/gallery/${item.slug}`} className="w-max">
-                    <button className="bg-neutral-500 cursor-pointer hover:scale-105 transition-all duration-300 text-white rounded-md w-max p-2 px-4">
+                    <button
+                      className=" cursor-pointer
+    bg-neutral-500
+    border-b-6 border-neutral-600
+    text-white 
+    rounded-md
+    shadow-lg shadow-neutral-700/40
+    px-3 py-2
+    transition-all duration-300
+    transform hover:translate-y-1
+    
+  "
+                    >
                       Δείτε περισσότερα έργα
                     </button>
                   </Link>

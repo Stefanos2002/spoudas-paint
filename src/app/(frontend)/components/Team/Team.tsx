@@ -14,7 +14,9 @@ export default async function Team() {
 
           <div className="w-30 h-1 rounded bg-blue-600 mb-4"></div>
 
-          <h2 className="font-bold text-4xl md:text-5xl text-blue-950 mb-4">Γνωρίστε την Ομάδα</h2>
+          <h2 className="font-bold text-4xl md:text-[2.5rem] text-blue-950 mb-4">
+            Γνωρίστε την Ομάδα
+          </h2>
 
           <p className="text-gray-600 max-w-xl">
             Είμαστε μια οικογενειακή επιχείρηση με πάθος για την ποιότητα και τη λεπτομέρεια. Στόχος

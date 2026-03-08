@@ -3,8 +3,9 @@ import styles from './Banner.module.css'
 
 export default function Banner() {
   return (
-    <main className="pt-19">
-      <div className={`${styles.banner} relative`}>
+    <main id="αρχική" className="pt-19">
+      <div className={`w-full h-screen overflow-hidden relative`}>
+        <div className={`${styles.banner} absolute inset-0`}></div>
         <div className="flex flex-col gap-0 lg:gap-2 items-start absolute bottom-35 left-8 md:left-15">
           <h1 className="text-3xl sm:text-4xl lg:text-[2.5rem] font-black text-blue-950 tracking-tight">
             Επαγγελματικές βαφές χώρων
@@ -16,7 +17,7 @@ export default function Banner() {
             <button
               className="cursor-pointer
   hover:translate-y-1.5
-  border-b-6 border-slate-900
+  border-b-4 border-slate-900
   text-md sm:text-lg
   rounded-xl
   transition-all duration-300
