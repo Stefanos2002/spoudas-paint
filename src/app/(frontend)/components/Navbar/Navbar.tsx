@@ -4,7 +4,7 @@ import MobileMenu from '../MobileMenu/MobileMenu'
 
 export default function Navbar() {
   return (
-    <nav id="navbar" className="fixed z-30 bg-blue-950 flex justify-between h-22 w-full">
+    <nav id="navbar" className="fixed z-30 bg-blue-950 flex justify-between h-19 w-full">
       <div id="logo" className="w-max flex">
         <Image src="/images/logo-splash.png" alt="logo-splash" width={100} height={100} />
         <div className="flex flex-col -translate-x-10 justify-center">

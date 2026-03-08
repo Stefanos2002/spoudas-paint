@@ -3,13 +3,13 @@ import styles from './Banner.module.css'
 
 export default function Banner() {
   return (
-    <main className="pt-22">
+    <main className="pt-19">
       <div className={`${styles.banner} relative`}>
-        <div className="flex flex-col  gap-3 lg:gap-5 items-start absolute bottom-35 left-8 md:left-15">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-blue-950 tracking-tight">
+        <div className="flex flex-col gap-0 lg:gap-2 items-start absolute bottom-35 left-8 md:left-15">
+          <h1 className="text-3xl sm:text-4xl lg:text-[2.5rem] font-black text-blue-950 tracking-tight">
             Επαγγελματικές βαφές χώρων
           </h1>
-          <h2 className="text-md sm:text-lg lg:text-xl tracking">
+          <h2 className="text-md sm:text-lg lg:text-[1.2rem] mb-2">
             Με εμπειρία, καθαρή δουλειά και προσοχή στη λεπτομέρεια
           </h2>
           <Link href="/rantevou">
