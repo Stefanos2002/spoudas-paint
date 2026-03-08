@@ -13,7 +13,19 @@ export default function Banner() {
             Με εμπειρία, καθαρή δουλειά και προσοχή στη λεπτομέρεια
           </h2>
           <Link href="/rantevou">
-            <button className="cursor-pointer text-md sm:text-lg rounded-xl transition-all duration-300 hover:tracking-[.1rem] bg-blue-950 text-white p-5 px-6">
+            <button
+              className="cursor-pointer
+  hover:translate-y-1.5
+  border-b-6 border-slate-900
+  text-md sm:text-lg
+  rounded-xl
+  transition-all duration-300
+  bg-linear-to-b from-blue-900 via-blue-950 to-blue-950
+  shadow-[inset_0_2px_0_rgba(255,255,255,0.15)]
+  hover:shadow-[inset_0_2px_0_rgba(255,255,255,0.2)]
+  text-white
+  py-3 px-4"
+            >
               Κλείστε ραντεβού
             </button>
           </Link>
