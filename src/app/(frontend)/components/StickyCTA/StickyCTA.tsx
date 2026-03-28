@@ -35,8 +35,8 @@ export default function StickyCTA() {
       href="/rantevou"
       className={`
         fixed bottom-6 right-6 z-20
-        rounded-full bg-blue-900 px-6 py-4 transition-all text-white shadow-xl
-        hover:bg-blue-800
+        rounded-full bg-neutral-500 px-5 text-[16px] border border-neutral-700 border-b-10 py-3 transition-all text-white shadow-xl
+        hover:bg-neutral-700
         ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}
       `}
     >

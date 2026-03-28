@@ -17,10 +17,9 @@ export default function Banner() {
             <button
               className="cursor-pointer
   hover:translate-y-1.5
-  border-b-4 border-slate-900
+  border-b-9 border-slate-900
   text-md sm:text-lg
-  rounded-xl
-  transition-all duration-300
+  rounded-full transition-all duration-300
   bg-linear-to-b from-blue-900 via-blue-950 to-blue-950
   shadow-[inset_0_2px_0_rgba(255,255,255,0.15)]
   hover:shadow-[inset_0_2px_0_rgba(255,255,255,0.2)]

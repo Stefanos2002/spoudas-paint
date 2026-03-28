@@ -12,7 +12,7 @@ export default function DesktopMenu({ scrollTo }: Props) {
   const pathname = usePathname()
 
   return (
-    <ul className="text-neutral-300 max-[1150px]:hidden flex text-lg gap-4 flex-row justify-end items-center mr-6 h-full">
+    <ul className="text-neutral-300 max-[1150px]:hidden flex text-[16.5px] gap-4 flex-row justify-end items-center mr-6 h-full">
       {links.map((link) => {
         if ('target' in link) {
           // same-page section
@@ -53,7 +53,7 @@ export default function DesktopMenu({ scrollTo }: Props) {
           shadow-[inset_0_1px_0_rgba(255,255,255,0.25)]"
         >
           <IoIosCall />
-          <span>Καλέστε μας</span>
+          <span className="text-[16.5px]">Καλέστε μας</span>
         </button>
 
         <div
