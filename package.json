@@ -73,5 +73,19 @@
       "esbuild",
       "unrs-resolver"
     ]
-  }
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stefanos2002/spoudas-paint.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/Stefanos2002/spoudas-paint/issues"
+  },
+  "homepage": "https://github.com/Stefanos2002/spoudas-paint#readme"
 }
