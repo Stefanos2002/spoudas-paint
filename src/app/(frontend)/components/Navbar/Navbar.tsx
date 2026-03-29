@@ -4,6 +4,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import DesktopMenu from '../DesktopMenu/DekstopMenu'
 import MobileMenu from '../MobileMenu/MobileMenu'
 import { useSmoothScroll } from '@/lib/useSmoothScroll'
+import styles from './Navbar.module.css'
 
 export default function Navbar() {
   const { scrollTo } = useSmoothScroll()
@@ -19,7 +20,7 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="fixed z-30 bg-blue-950 flex justify-between h-19 w-full">
+    <nav className={`${styles.navbar} fixed z-30 bg-blue-950 flex justify-between h-19 w-full`}>
       <div className="w-max flex cursor-pointer" onClick={handleLogoClick}>
         <Image src="/images/logo-splash.png" alt="logo" width={100} height={100} />
         <div className="flex flex-col -translate-x-10 justify-center">

@@ -34,11 +34,11 @@ export default function StickyCTA() {
     <Link
       href="/rantevou"
       className={`
-        fixed bottom-3 right-4 z-20
+        fixed bottom-4 right-6 z-20
         cursor-pointer
   hover:translate-y-1.5
   border-b-9 border-slate-900
-  text-[14px] sm:text-[17px]
+  text-[14px] sm:text-[15px] md:text-[16px]
   rounded-full transition-all duration-300
   bg-linear-to-b from-blue-900 via-blue-950 to-blue-950
   text-white

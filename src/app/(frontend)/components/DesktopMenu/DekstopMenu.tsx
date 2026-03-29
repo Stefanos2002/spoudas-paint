@@ -12,7 +12,7 @@ export default function DesktopMenu({ scrollTo }: Props) {
   const pathname = usePathname()
 
   return (
-    <ul className="text-neutral-300 max-[1150px]:hidden flex text-[16.5px] gap-4 flex-row justify-end items-center mr-6 h-full">
+    <ul className="text-neutral-300 lg:flex hidden text-[16.5px] gap-4 flex-row justify-end items-center mr-6 h-full">
       {links.map((link) => {
         if ('target' in link) {
           // same-page section
@@ -65,13 +65,13 @@ export default function DesktopMenu({ scrollTo }: Props) {
         >
           <a
             href="tel:+306973188392"
-            className="flex items-center gap-2 text-[16px] px-4 py-2 text-blue-950 hover:bg-blue-100"
+            className="flex items-center gap-2 text-[16px] px-3 py-2 text-blue-950 hover:bg-blue-100"
           >
             <FiPhone className="text-blue-900 fill-blue-900" /> 697 318 8392
           </a>
           <a
             href="tel:+306989462660"
-            className="flex items-center gap-2 text-[16px] px-4 py-2 text-blue-950 hover:bg-blue-100"
+            className="flex items-center gap-2 text-[16px] px-3 py-2 text-blue-950 hover:bg-blue-100"
           >
             <FiPhone className="text-blue-900 fill-blue-900" /> 698 946 2660
           </a>
