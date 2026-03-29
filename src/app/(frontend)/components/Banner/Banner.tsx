@@ -19,7 +19,7 @@ export default function Banner() {
         </div>
 
         <Link
-          href="/rantevou"
+          href="/book"
           className="absolute bottom-26 left-5 min-[500px]:bottom-55 min-[500px]:left-1/2 min-[500px]:-translate-x-1/2 md:left-34 md:bottom-25"
         >
           <button

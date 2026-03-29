@@ -8,7 +8,7 @@ export default async function Services() {
   const docs = await getServices()
 
   return (
-    <main id="υπηρεσίες" className="relative z-10 -mt-20 md:-mt-12 flex flex-col">
+    <main id="services" className="relative z-10 -mt-20 md:-mt-12 flex flex-col">
       <div
         className={`bg-white border-t-24 ${styles.design} border-neutral-100 rounded-t-[2.5rem] md:rounded-t-[3rem] shadow-md pt-16 md:pt-24 overflow-hidden`}
       >

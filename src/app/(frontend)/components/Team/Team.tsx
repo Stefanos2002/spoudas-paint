@@ -7,7 +7,7 @@ export default async function Team() {
   const team = await getTeam()
 
   return (
-    <main id="ομάδα" className="bg-white pt-20 pb-18">
+    <main id="team" className="bg-white pt-20 pb-18">
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
         <div className={`mb-16 ${styles.reveal}`}>

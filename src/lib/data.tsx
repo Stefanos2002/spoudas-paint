@@ -8,7 +8,7 @@ export type NavLink =
   | { href: string; label: string; icon: ReactElement } // external page link
 
 export const links: NavLink[] = [
-  { target: 'υπηρεσίες', label: 'Υπηρεσιες', icon: <FaPaintRoller /> },
+  { target: 'services', label: 'Υπηρεσιες', icon: <FaPaintRoller /> },
   { href: '/gallery', label: 'Τα Εργα μας', icon: <FaImages /> },
-  { target: 'ομάδα', label: 'Γνωριστε μας', icon: <GoPersonFill /> },
+  { target: 'team', label: 'Γνωριστε μας', icon: <GoPersonFill /> },
 ]

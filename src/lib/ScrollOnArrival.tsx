@@ -1,22 +1,27 @@
-// app/page.tsx or a client component on the home page
 'use client'
 import { useEffect } from 'react'
-import { useSearchParams } from 'next/navigation'
 import { getLenis } from '@/lib/lenis'
 
 export function ScrollOnArrival() {
-  const searchParams = useSearchParams()
-
   useEffect(() => {
-    const target = searchParams.get('scrollTo')
+    const target = sessionStorage.getItem('scrollTo')
     if (!target) return
-    // wait for page to render
-    setTimeout(() => {
+    sessionStorage.removeItem('scrollTo')
+
+    const tryScroll = (attempts = 0) => {
       const section = document.getElementById(target)
-      if (!section) return
-      getLenis().scrollTo(section.offsetTop)
-    }, 300)
-  }, [searchParams])
+      const lenis = getLenis()
+
+      if (section && lenis) {
+        lenis.scrollTo(section, { offset: 0 })
+      } else if (attempts < 20) {
+        setTimeout(() => tryScroll(attempts + 1), 100)
+      }
+    }
+
+    // Give the page a moment to paint first
+    setTimeout(() => tryScroll(), 300)
+  }, [])
 
   return null
 }

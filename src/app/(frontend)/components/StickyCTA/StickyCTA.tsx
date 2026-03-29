@@ -32,7 +32,7 @@ export default function StickyCTA() {
 
   return (
     <Link
-      href="/rantevou"
+      href="/book"
       className={`
         fixed bottom-4 right-6 z-20
         cursor-pointer

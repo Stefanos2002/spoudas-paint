@@ -34,14 +34,12 @@ export default function MobileMenu({ scrollTo }: Props) {
   }, [open])
 
   const handleClick = (link: NavLink) => {
-    setOpen(false)
     if ('target' in link) {
       if (pathname !== '/') {
-        router.push(`/?scrollTo=${link.target}`)
+        sessionStorage.setItem('scrollTo', link.target)
+        router.push('/')
       } else {
-        const section = document.getElementById(link.target)
-        if (!section) return
-        getLenis().scrollTo(section.offsetTop)
+        scrollTo(link.target)
       }
     } else {
       router.push(link.href)
@@ -187,7 +185,7 @@ export default function MobileMenu({ scrollTo }: Props) {
             </div>
 
             <Link
-              href="/rantevou"
+              href="/book"
               onClick={() => setOpen(false)}
               className="w-full mt-6 flex items-center justify-center gap-2
                 py-4 rounded-2xl text-[15px] tracking-wide text-white
