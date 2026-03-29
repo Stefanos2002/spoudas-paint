@@ -5,6 +5,7 @@ import { FiPhone } from 'react-icons/fi'
 import { links, NavLink } from '@/lib/data'
 import { getLenis } from '@/lib/lenis'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 interface Props {
   scrollTo: (id: string) => void
@@ -13,6 +14,7 @@ interface Props {
 export default function MobileMenu({ scrollTo }: Props) {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
+  const router = useRouter()
 
   useEffect(() => {
     setOpen(false)
@@ -27,12 +29,18 @@ export default function MobileMenu({ scrollTo }: Props) {
   }, [open])
 
   const handleClick = (link: NavLink) => {
-    if ('target' in link) {
-      const section = document.getElementById(link.target)
-      if (!section) return
-      getLenis().scrollTo(section.offsetTop)
-    }
     setOpen(false)
+    if ('target' in link) {
+      if (pathname !== '/') {
+        router.push(`/?scrollTo=${link.target}`)
+      } else {
+        const section = document.getElementById(link.target)
+        if (!section) return
+        getLenis().scrollTo(section.offsetTop)
+      }
+    } else {
+      router.push(link.href)
+    }
   }
 
   return (
@@ -103,7 +111,7 @@ export default function MobileMenu({ scrollTo }: Props) {
 
                   {/* Text */}
                   <div className="flex-1">
-                    <p className="text-white text-[17px]">{link.label}</p>
+                    <p className="text-white text-[16px]">{link.label}</p>
                     {/* {'description' in link && (
                       <p className="text-white/40 text-xs mt-0.5">{link.description}</p>
                     )} */}
@@ -164,7 +172,7 @@ export default function MobileMenu({ scrollTo }: Props) {
               href="/rantevou"
               onClick={() => setOpen(false)}
               className="w-full mt-6 flex items-center justify-center gap-2
-                  py-4 rounded-2xl font-semibold text-[15px] tracking-wide text-white
+                  py-4 rounded-2xl text-[15px] tracking-wide text-white
                   bg-blue-600 hover:bg-blue-500 active:scale-[0.98]
                   transition-all duration-200 shadow-lg shadow-blue-900/40"
             >

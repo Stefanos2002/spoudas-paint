@@ -8,17 +8,17 @@ export default async function Team() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
         <div className="mb-16">
-          <span className="text-blue-600 font-bold tracking-widest text-sm uppercase block mb-2">
+          <span className="text-blue-600 font-bold tracking-widest text-[12px] uppercase block mb-2">
             Ποιοι ειμαστε
           </span>
 
-          <div className="w-30 h-1 rounded bg-blue-600 mb-4"></div>
+          <div className="w-30 h-1 rounded bg-blue-600"></div>
 
-          <h2 className="font-bold text-4xl md:text-[2.5rem] text-blue-950 mb-4">
+          <h2 className="font-bold text-[28px] md:text-[2.5rem] text-blue-950 mb-4">
             Γνωρίστε την Ομάδα
           </h2>
 
-          <p className="text-gray-600 max-w-xl">
+          <p className="text-gray-600 text-md max-w-xl">
             Είμαστε μια οικογενειακή επιχείρηση με πάθος για την ποιότητα και τη λεπτομέρεια. Στόχος
             μας είναι να δημιουργούμε χώρους που ξεχωρίζουν.
           </p>
@@ -50,25 +50,25 @@ export default async function Team() {
         </div>
 
         {/* Trust Badges */}
-        <div className="mt-20 grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="flex items-center hover:scale-105 transition-all duration-400 gap-3 bg-blue-900 p-4 rounded-xl justify-center">
+        <div className="mt-20 grid place-content-center sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="flex items-center hover:scale-105 transition-all duration-400 gap-3 bg-blue-900 p-3 rounded-full justify-center">
             <span className="text-white text-xl">✔</span>
-            <p className="font-medium text-white">30+ Χρόνια Εμπειρίας</p>
+            <p className="font-medium text-sm text-white">30+ Χρόνια Εμπειρίας</p>
           </div>
 
-          <div className="flex items-center hover:scale-105 transition-all duration-400 gap-3 bg-blue-900 p-4 rounded-xl justify-center">
+          <div className="flex items-center hover:scale-105 transition-all duration-400 gap-3 bg-blue-900 p-3 rounded-full justify-center">
             <span className="text-white text-xl">✔</span>
-            <p className="font-medium text-white">Πιστοποιημένα Υλικά</p>
+            <p className="font-medium text-sm text-white">Πιστοποιημένα Υλικά</p>
           </div>
 
-          <div className="flex items-center hover:scale-105 transition-all duration-400 gap-3 bg-blue-900 p-4 rounded-xl justify-center">
+          <div className="flex items-center hover:scale-105 transition-all duration-400 gap-3 bg-blue-900 p-3 rounded-full justify-center">
             <span className="text-white text-xl">✔</span>
-            <p className="font-medium text-white">Εγγύηση Ποιότητας</p>
+            <p className="font-medium text-sm text-white">Εγγύηση Ποιότητας</p>
           </div>
 
-          <div className="flex items-center hover:scale-105 transition-all duration-400 gap-3 bg-blue-900 p-4 rounded-xl justify-center">
+          <div className="flex items-center hover:scale-105 transition-all duration-400 gap-3 bg-blue-900 p-3 rounded-full justify-center">
             <span className="text-white text-xl">✔</span>
-            <p className="font-medium text-white">Άμεση Εξυπηρέτηση</p>
+            <p className="font-medium text-sm text-white">Άμεση Εξυπηρέτηση</p>
           </div>
         </div>
       </div>
