@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import { getGallery } from '@/lib/getGallery'
 import { mapGalleryImages } from '@/lib/mapGalleryItems'
 import GalleryClient from '../../components/Lightbox/GalleryClient'
