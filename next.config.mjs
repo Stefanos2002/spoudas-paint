@@ -25,7 +25,6 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'spoudas-paint.onrender.com',
-        pathname: '/api/media/file/**',
       },
     ],
   },
