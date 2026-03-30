@@ -40,6 +40,7 @@ export default function MobileMenu({ scrollTo }: Props) {
         router.push('/')
       } else {
         scrollTo(link.target)
+        setOpen(false)
       }
     } else {
       router.push(link.href)
