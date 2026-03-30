@@ -17,6 +17,8 @@ const dirname = path.dirname(filename)
 
 export default buildConfig({
   serverURL: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+  cookiePrefix: 'payload',
+  csrf: [process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'],
   email: resendAdapter({
     defaultFromAddress: 'noreply@spoudaspaint.com', // use a verified domain later
     defaultFromName: 'Spoudas Paint',

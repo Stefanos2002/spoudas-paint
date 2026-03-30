@@ -27,6 +27,16 @@ const nextConfig = {
         hostname: 'spoudas-paint.onrender.com',
         pathname: '/api/media/file/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'utfs.io',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.ufs.sh',
+        pathname: '/**',
+      },
     ],
   },
 }

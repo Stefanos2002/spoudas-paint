@@ -18,7 +18,7 @@ export function mapGalleryImages(images: GalleryItem[]): MappedGalleryItem[] {
         img: src,
         altText: item.image.alt ?? `Gallery image ${index + 1}`,
         width: width,
-        height: height,
+        height: item.height ?? height,
       }
     })
     .filter(Boolean) as MappedGalleryItem[]

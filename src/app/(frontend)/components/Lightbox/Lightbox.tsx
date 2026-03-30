@@ -117,7 +117,7 @@ export default function Lightbox({ images, index, onClose, onNext, onPrev }: Lig
             e.stopPropagation()
             handleClose()
           }}
-          className="absolute z-[120] bg-red-500 hover:bg-red-600 rounded-full w-9 h-9 flex items-center justify-center transition-all hover:scale-110 cursor-pointer top-6 right-8 text-white text-2xl leading-none"
+          className="absolute z-[120] bg-red-600 hover:bg-red-700 rounded-sm w-9 h-9 flex items-center justify-center transition-all hover:scale-110 cursor-pointer top-6 right-8 text-white text-3xl leading-none"
         >
           ×
         </button>

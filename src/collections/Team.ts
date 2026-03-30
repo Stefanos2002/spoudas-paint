@@ -7,7 +7,12 @@ export const Team: CollectionConfig = {
     singular: 'Member',
     plural: 'Team',
   },
-  access: { read: () => true },
+  access: {
+    read: () => true,
+    update: () => true,
+    delete: () => true,
+    create: () => true,
+  },
   admin: {
     useAsTitle: 'name',
   },

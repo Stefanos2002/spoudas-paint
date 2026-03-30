@@ -10,13 +10,7 @@ export const Media: CollectionConfig = {
     create: () => true,
   },
   upload: {
-    staticDir: 'media',
-    imageSizes: [
-      {
-        name: 'masonry',
-        width: 800,
-      },
-    ],
+    disableLocalStorage: true,
   },
   fields: [
     {
