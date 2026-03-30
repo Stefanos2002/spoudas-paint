@@ -15,7 +15,7 @@ export function mapGalleryImages(images: GalleryItem[]): MappedGalleryItem[] {
 
       return {
         id: item.id ?? String(index),
-        img: `${process.env.PAYLOAD_URL}${src}`,
+        img: src,
         altText: item.image.alt ?? `Gallery image ${index + 1}`,
         width: width,
         height: height,
