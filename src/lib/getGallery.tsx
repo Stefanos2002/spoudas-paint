@@ -6,7 +6,7 @@ interface GalleryResponse {
 }
 
 export async function getGallery(slug?: string): Promise<GalleryDoc[]> {
-  const url = new URL(`${process.env.PAYLOAD_URL}/api/gallery?depth=2`) // notice plural
+  const url = new URL(`${process.env.PAYLOAD_URL}/api/gallery?depth=1`)
   if (slug) url.searchParams.set('where[slug][equals]', slug)
 
   const res = await fetch(url.toString(), { next: { revalidate: 60 } })

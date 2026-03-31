@@ -40,7 +40,7 @@ export default async function Services() {
                     } order-first ${isEven ? styles.revealRight : styles.revealLeft}`}
                   >
                     <Image
-                      src={item.image.url}
+                      src={item.image.sizes?.card?.url ?? item.image.url}
                       alt={item.image.alt || 'Service Image'}
                       fill
                       priority={index === 0}

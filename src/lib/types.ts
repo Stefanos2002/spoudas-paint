@@ -16,6 +16,9 @@ export interface ServicesItem {
   alt: string
   url: string
   height?: number
+  sizes?: {
+    card?: { url: string; width?: number; height?: number }
+  }
 }
 
 export interface TeamDoc {
@@ -31,6 +34,9 @@ export interface TeamMember {
   alt: string
   url: string
   height?: number
+  sizes?: {
+    avatar?: { url: string; width?: number; height?: number }
+  }
 }
 
 export interface GalleryItem {

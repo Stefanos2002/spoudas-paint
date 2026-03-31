@@ -33,7 +33,7 @@ export default async function Team() {
             >
               {member.image?.url && (
                 <Image
-                  src={member.image.url}
+                  src={member.image.sizes?.avatar?.url ?? member.image.url}
                   alt={member.image.alt}
                   width={260}
                   height={260}

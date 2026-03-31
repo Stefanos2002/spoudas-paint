@@ -8,7 +8,7 @@ export default function Banner() {
       <div className="w-full h-screen overflow-hidden relative">
         <div className={`${styles.bannerWrapper} absolute inset-0`}>
           <Image
-            src="/images/Banner.jpg"
+            src="/images/Banner.webp"
             alt="Επαγγελματικές βαφές χώρων"
             fill
             priority
