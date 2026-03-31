@@ -168,7 +168,7 @@ export default function MobileMenu({ scrollTo }: Props) {
                   key={call.href}
                   href={call.href}
                   className="flex-1 flex items-center gap-2.5 px-3 py-3 rounded-2xl
-                    bg-blue-700/30 border border-blue-400/20
+                    bg-blue-700/30  border border-blue-400/20
                     hover:bg-blue-700/50 hover:border-blue-400/40 hover:-translate-y-0.5
                     active:scale-[0.97] transition-all duration-200"
                 >

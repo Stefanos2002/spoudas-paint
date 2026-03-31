@@ -95,14 +95,14 @@ export default function Page() {
       <div ref={formRef} className="w-full max-w-xl bg-white rounded-2xl shadow-lg p-8">
         {sent ? (
           <div className="text-center py-8">
-            <div className="text-5xl mb-4">✅</div>
-            <h2 className="text-xl font-semibold mb-2">Το αίτημά σας στάλθηκε!</h2>
-            <p className="text-neutral-500">Θα επικοινωνήσουμε μαζί σας σύντομα.</p>
+            <div className="text-4xl md:text-5xl mb-4">✅</div>
+            <h2 className="text-lg md:text-xl font-semibold mb-2">Το αίτημά σας στάλθηκε!</h2>
+            <p className="text-sm md:text-base text-neutral-500">Θα επικοινωνήσουμε μαζί σας σύντομα.</p>
           </div>
         ) : (
           <>
-            <h1 className="text-2xl mb-2 text-center">Κλείστε Ραντεβού</h1>
-            <p className="text-neutral-600 text-center mb-6">
+            <h1 className="text-xl md:text-2xl mb-2 text-center">Κλείστε Ραντεβού</h1>
+            <p className="text-sm md:text-base text-neutral-600 text-center mb-6">
               Συμπληρώστε τα στοιχεία σας και θα επικοινωνήσουμε μαζί σας σύντομα.
             </p>
             <form className="space-y-4" onSubmit={handleSubmit}>
@@ -148,7 +148,7 @@ export default function Page() {
               </div>
 
               <div className="space-y-3">
-                <label className="font-medium">
+                <label className="text-sm md:text-base font-medium">
                   Υπηρεσίες <span className="text-red-500">*</span>
                 </label>
                 <div
@@ -169,7 +169,7 @@ export default function Page() {
                         onChange={() => toggleService(s)}
                         className="w-4 h-4 accent-blue-600"
                       />
-                      <span>{s}</span>
+                      <span className="text-sm md:text-base">{s}</span>
                     </label>
                   ))}
                 </div>
@@ -203,7 +203,7 @@ export default function Page() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full cursor-pointer bg-blue-600 hover:bg-blue-700 disabled:opacity-60 text-white font-medium py-2.5 rounded-lg transition"
+                className="w-full cursor-pointer bg-blue-600 hover:bg-blue-700 disabled:opacity-60 text-white text-sm md:text-base font-medium py-2.5 rounded-lg transition"
               >
                 {loading ? 'Αποστολή...' : 'Αποστολή Αιτήματος'}
               </button>

@@ -37,6 +37,7 @@ export default async function Team() {
                   alt={member.image.alt}
                   width={260}
                   height={260}
+                  sizes="260px"
                   className="mx-auto rounded-full mb-6 object-cover"
                 />
               )}
