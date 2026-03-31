@@ -7,7 +7,7 @@ interface GalleryResponse {
 
 export async function getServices(): Promise<ServicesDoc[]> {
   const res = await fetch(`${process.env.PAYLOAD_URL}/api/services?depth=2`, {
-    cache: 'no-store',
+    next: { revalidate: 60 },
   })
 
   const data: GalleryResponse = await res.json()

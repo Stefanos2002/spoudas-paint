@@ -1,12 +1,5 @@
-.banner {
+.bannerWrapper {
   animation: zoom 2s ease-in-out alternate;
-  background-image: url('/images/Banner.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom 0 right 0;
-  width: 100%;
-  height: 100vh;
-  position: relative;
 }
 
 @keyframes zoom {

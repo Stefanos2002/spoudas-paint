@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import styles from './Banner.module.css'
 
@@ -5,14 +6,23 @@ export default function Banner() {
   return (
     <main id="αρχική">
       <div className="w-full h-screen overflow-hidden relative">
-        <div className={`${styles.banner} absolute inset-0`}></div>
+        <div className={`${styles.bannerWrapper} absolute inset-0`}>
+          <Image
+            src="/images/Banner.jpg"
+            alt="Επαγγελματικές βαφές χώρων"
+            fill
+            priority
+            quality={85}
+            className="object-cover object-bottom-right"
+          />
+        </div>
 
-        <div className="flex flex-col gap-1 lg:gap-2 absolute text-center bottom-70 right-10 left-10 md:bottom-40 md:left-0 md:right-38">
+        <div className="flex flex-col gap-1 lg:gap-2 absolute text-center bottom-80 right-10 left-10 md:bottom-40 md:left-0 md:right-38">
           <div className={`max-w-[20rem] mx-auto md:max-w-[39rem] md:mx-0 ${styles.heroText}`}>
             <h1 className="text-3xl sm:text-4xl font-black text-blue-950 tracking-tight rounded-lg px-2 py-1">
               Επαγγελματικές βαφές χώρων
             </h1>
-            <h2 className="text-base font-semibold sm:font-medium sm:text-lg mb-2 text-slate-800 rounded-lg px-2 py-1">
+            <h2 className="md:-translate-x-12 text-sm sm:text-[15px] mb-2 text-slate-800 rounded-lg px-2 py-1">
               Με εμπειρία, καθαρή δουλειά και προσοχή στη λεπτομέρεια
             </h2>
           </div>

@@ -17,11 +17,11 @@ export default async function Services() {
           <span className="text-blue-600 font-bold tracking-widest text-[12px] uppercase mb-2 block">
             Τι προσφερουμε
           </span>
-          <h1 className="font-bold text-[28px] md:text-[2rem] tracking-tight text-blue-950 mb-6">
+          <h1 className="font-bold text-[25px] md:text-[1.8rem] tracking-tight text-blue-950 mb-6">
             Υπηρεσίες
           </h1>
           <div className="w-24 h-1.5 bg-blue-600 mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-600 text-md sm:text-[1.1rem]">
+          <p className="text-gray-600 text-[15px] sm:text-md">
             Ολοκληρωμένες λύσεις ελαιοχρωματισμού και ανακαίνισης, προσαρμοσμένες στις ανάγκες του
             χώρου σας με έμφαση στην ποιότητα.
           </p>
@@ -43,6 +43,7 @@ export default async function Services() {
                       src={item.image.url}
                       alt={item.image.alt || 'Service Image'}
                       fill
+                      priority={index === 0}
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
@@ -52,18 +53,16 @@ export default async function Services() {
                 <div
                   className={`${
                     isEven ? 'md:order-first' : 'md:order-last'
-                  } order-last p-8 py-15 sm:py-22 md:py-0 flex flex-col justify-center text-center items-center gap-7 leading-[30px] text-lg
+                  } order-last p-8 py-25 sm:py-35 md:py-0 flex flex-col justify-center gap-7 leading-[30px] text-lg
                   ${isEven ? styles.revealLeft : styles.revealRight}`}
                 >
-                  <h1 className="font-black tracking-tight text-[25px] md:text-[1.7rem] text-blue-950">
+                  <h1 className="font-black tracking-tight text-[23px] sm:text-[1.6rem] text-blue-950">
                     {item.title}
                   </h1>
-                  <p className="text-gray-600 text-[16px] md:text-[1rem] leading-[25px]">
-                    {item.description}
-                  </p>
+                  <p className="text-gray-600 text-[15px] leading-[25px]">{item.description}</p>
                   <Link href={`/gallery/${item.slug}`} className="w-max">
                     <button
-                      className="text-[15px] md:text-[16px] cursor-pointer
+                      className="text-[14px] md:text-[16px] cursor-pointer
                         bg-neutral-500
                         border-b-6 border-neutral-600
                         text-white

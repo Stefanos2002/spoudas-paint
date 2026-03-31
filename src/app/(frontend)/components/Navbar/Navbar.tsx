@@ -22,10 +22,10 @@ export default function Navbar() {
   return (
     <nav className={`${styles.navbar} fixed z-30 bg-blue-950 flex justify-between h-19 w-full`}>
       <div className="w-max flex cursor-pointer" onClick={handleLogoClick}>
-        <Image src="/images/logo-splash.png" alt="logo" width={72} height={72} />
+        <Image src="/images/logo-splash.png" alt="logo" width={75} height={72} />
         <div className="flex flex-col -translate-x-10 justify-center">
-          <h1 className="text-white text-3xl font-black tracking-tighter leading-none">ΣΠΟΥΔΑΣ</h1>
-          <span className="text-blue-100 text-center bg-blue-700 p-1 text-xs font-semibold tracking-wider uppercase mt-1">
+          <h1 className="text-white text-2xl font-black tracking-tighter leading-none">ΣΠΟΥΔΑΣ</h1>
+          <span className="text-blue-100 text-center bg-blue-700 p-1 text-[10px] font-semibold tracking-wider uppercase mt-1">
             ΧΡΩΜΑ & ΔΙΑΚΟΣΜΗΣΗ
           </span>
         </div>

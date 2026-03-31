@@ -9,7 +9,7 @@ export async function getGallery(slug?: string): Promise<GalleryDoc[]> {
   const url = new URL(`${process.env.PAYLOAD_URL}/api/gallery?depth=2`) // notice plural
   if (slug) url.searchParams.set('where[slug][equals]', slug)
 
-  const res = await fetch(url.toString(), { cache: 'no-store' })
+  const res = await fetch(url.toString(), { next: { revalidate: 60 } })
   const data: GalleryResponse = await res.json()
 
   if (!data.docs?.length) return []

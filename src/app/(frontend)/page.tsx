@@ -1,6 +1,21 @@
 // so Payload doesn't try to initialize during the build.
 export const dynamic = 'force-dynamic'
 
+import type { Metadata } from 'next'
+import { siteConfig } from '@/lib/seo'
+
+export const metadata: Metadata = {
+  title: siteConfig.name,
+  description: siteConfig.description,
+  alternates: { canonical: siteConfig.url },
+  openGraph: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    url: siteConfig.url,
+    type: 'website',
+  },
+}
+
 import { getPayload } from 'payload'
 import config from '@/payload.config'
 import React, { Suspense } from 'react'

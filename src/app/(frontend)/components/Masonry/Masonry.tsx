@@ -44,18 +44,6 @@ const useMeasure = <T extends HTMLElement>() => {
   return [ref, size] as const
 }
 
-const preloadImages = async (urls: string[]): Promise<void> => {
-  await Promise.all(
-    urls.map(
-      (src) =>
-        new Promise<void>((resolve) => {
-          const img = new window.Image()
-          img.src = src
-          img.onload = img.onerror = () => resolve()
-        }),
-    ),
-  )
-}
 
 export interface Item {
   id: string
@@ -137,7 +125,7 @@ const Masonry: React.FC<MasonryProps> = ({
   }
 
   useEffect(() => {
-    preloadImages(items.map((i) => i.img)).then(() => setImagesReady(true))
+    setImagesReady(true)
   }, [items])
 
   const grid = useMemo<GridItem[]>(() => {
@@ -256,6 +244,7 @@ const Masonry: React.FC<MasonryProps> = ({
             alt={item.altText}
             width={item.w}
             height={item.h}
+            sizes="(min-width: 1600px) 20vw, (min-width: 1200px) 25vw, (min-width: 930px) 33vw, (min-width: 600px) 50vw, 100vw"
             className="w-full h-full object-cover rounded-[10px] shadow-[0px_10px_50px_-10px_rgba(0,0,0,0.2)]"
           />
         </div>

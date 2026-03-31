@@ -22,7 +22,7 @@ export default function Footer() {
         transition-all duration-700 ease-out
         ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
     >
-      <div className="p-4">
+      <div className="p-4 text-sm">
         © 2026 Spoudas Paint · Website by{' '}
         <a
           className="text-blue-500 hover:underline hover:text-blue-700 transition-colors duration-200"

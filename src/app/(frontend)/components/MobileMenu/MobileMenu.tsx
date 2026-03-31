@@ -66,15 +66,15 @@ export default function MobileMenu({ scrollTo }: Props) {
       >
         <span className="flex flex-col gap-[7px] items-center justify-center w-5 h-4 relative">
           <span
-            className={`absolute w-7 h-px rounded-full transition-all duration-300 ease-in-out
+            className={`absolute w-6 h-px rounded-full transition-all duration-300 ease-in-out
               ${open ? 'rotate-45 translate-y-0 bg-white' : '-translate-y-[9px] bg-white'}`}
           />
           <span
-            className={`absolute w-7 h-px bg-white rounded-full transition-all duration-300 ease-in-out
+            className={`absolute w-6 h-px bg-white rounded-full transition-all duration-300 ease-in-out
               ${open ? 'opacity-0 scale-x-0' : 'opacity-100 scale-x-100'}`}
           />
           <span
-            className={`absolute w-7 h-px rounded-full transition-all duration-300 ease-in-out
+            className={`absolute w-6 h-px rounded-full transition-all duration-300 ease-in-out
               ${open ? '-rotate-45 translate-y-0 bg-white' : 'translate-y-[9px] bg-white'}`}
           />
         </span>
@@ -115,15 +115,15 @@ export default function MobileMenu({ scrollTo }: Props) {
 
           {/* Nav Section */}
           <div className="flex-1 mt-18">
-            <p className="text-[10px] font-semibold tracking-[3px] text-blue-400/60 uppercase mb-6">
+            <p className="text-[10px] font-2 tracking-[3px] text-blue-400/60 uppercase mb-6">
               Πλοηγηση
             </p>
             <nav className="flex flex-col gap-1">
               {links.map((link, i) => (
                 <div
                   key={link.label}
-                  className={`flex items-center gap-4 px-4 py-3 rounded-2xl cursor-pointer
-                    border border-transparent
+                  className={`flex items-center gap-4 px-3 py-2 rounded-2xl cursor-pointer
+                    border border-transparent font-thin
                     hover:bg-blue-400/10 hover:border-blue-400/12 hover:translate-x-1
                     transition-all duration-200
                     ${open ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}
@@ -159,7 +159,7 @@ export default function MobileMenu({ scrollTo }: Props) {
             <p className="text-[10px] font-semibold tracking-[3px] text-blue-400/60 uppercase mb-3">
               Αμεση Κληση
             </p>
-            <div className="flex gap-2.5">
+            <div className="flex flex-col sm:flex-row gap-2.5">
               {[
                 { label: 'Γραμμή Α', number: '697 318 8392', href: 'tel:+306973188392' },
                 { label: 'Γραμμή Β', number: '698 946 2660', href: 'tel:+306989462660' },

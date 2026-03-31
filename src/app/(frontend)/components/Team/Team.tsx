@@ -15,10 +15,10 @@ export default async function Team() {
             Ποιοι ειμαστε
           </span>
           <div className="w-30 h-1 rounded bg-blue-600"></div>
-          <h2 className="font-bold text-[28px] md:text-[2rem] text-blue-950 mb-4">
+          <h2 className="font-bold text-[24px] md:text-[1.8rem] text-blue-950 mb-4">
             Γνωρίστε την Ομάδα
           </h2>
-          <p className="text-gray-600 text-md max-w-xl">
+          <p className="text-gray-600 text-[15px] max-w-xl">
             Είμαστε μια οικογενειακή επιχείρηση με πάθος για την ποιότητα και τη λεπτομέρεια. Στόχος
             μας είναι να δημιουργούμε χώρους που ξεχωρίζουν.
           </p>
@@ -41,7 +41,7 @@ export default async function Team() {
                 />
               )}
               <h3 className="text-xl font-bold text-blue-950">{member.name}</h3>
-              <p className="text-blue-600 font-medium mb-3">{member.role}</p>
+              <p className="text-blue-600 text-[15px] font-medium mb-3">{member.role}</p>
               <p className="text-gray-600 text-sm leading-relaxed">{member.description}</p>
             </div>
           ))}
