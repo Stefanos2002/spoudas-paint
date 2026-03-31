@@ -9,7 +9,7 @@ export default function StickyCTA() {
   const pathname = usePathname()
 
   const isHome = pathname === '/'
-  const isBooking = pathname === '/rantevou'
+  const isBooking = pathname === '/book'
 
   useEffect(() => {
     if (isBooking) {
