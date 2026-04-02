@@ -30,6 +30,36 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
+  i18n: {
+    translations: {
+      en: {
+        authentication: {
+          password: 'Κωδικός',
+          confirmPassword: 'Επιβεβαίωση Κωδικού',
+          newPassword: 'Νέος Κωδικός',
+        },
+        general: {
+          createNew: 'Δημιουργία νέου',
+          creatingNewLabel: 'Δημιουργία νέου {{label}}',
+          searchBy: 'Αναζήτηση με {{label}}',
+          columns: 'Στήλες',
+          filters: 'Φίλτρα',
+          addFilter: 'Πρόσθεσε Φίλτρο',
+          noFiltersSet: 'Δεν έχει εφαρμοστεί κάποιο Φίλτρο',
+          filterWhere: 'Εμφάνισε {{label}} όπου',
+          or: 'και',
+          addUpload: 'Πρόσθεσε Εικόνα',
+          addLabel: 'Πρόσθεσε {{label}}',
+          chooseFromExisting: 'Διάλεξε απο τη συλλογή',
+        },
+        upload: {
+          bulkUpload: 'Μαζική Καταχώριση',
+          editImage: 'Επεξεργασία Εικόνας',
+          previewSizes: 'Προεπισκόπηση Μεγεθών',
+        },
+      },
+    },
+  },
   collections: [Users, Media, Gallery, Services, Team],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',

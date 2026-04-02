@@ -9,21 +9,28 @@ export const Gallery: CollectionConfig = {
   admin: {
     useAsTitle: 'title',
   },
+  labels: {
+    singular: 'Αλμπουμ',
+    plural: 'Συλλογές',
+  },
   fields: [
     {
       name: 'title',
       type: 'text',
+      label: 'Τίτλος',
       required: true,
     },
     {
       name: 'slug',
       type: 'text',
+      label: 'Ονομα',
       unique: true,
       required: true,
     },
     {
       name: 'images',
       type: 'array',
+      label: 'Εικόνες',
       fields: [
         {
           name: 'image',
@@ -37,6 +44,12 @@ export const Gallery: CollectionConfig = {
           defaultValue: 500,
         },
       ],
+    },
+    {
+      name: 'updatedAt',
+      type: 'date',
+      label: 'Δημιουργήθηκε',
+      admin: { readOnly: true, hidden: true },
     },
   ],
 }

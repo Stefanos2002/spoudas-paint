@@ -5,9 +5,35 @@ export const Users: CollectionConfig = {
   admin: {
     useAsTitle: 'email',
   },
+  labels: {
+    singular: 'Χρήστη',
+    plural: 'Χρήστες',
+  },
   auth: true,
   fields: [
-    // Email added by default
-    // Add more fields as needed
+    {
+      name: 'email',
+      type: 'email',
+      label: 'Email',
+      required: true,
+    },
+    {
+      name: 'updatedAt',
+      type: 'date',
+      label: 'Μεταβλήθηκε',
+      admin: { readOnly: true, hidden: true },
+    },
+    {
+      name: 'createdAt',
+      type: 'date',
+      label: 'Δημιουργήθηκε',
+      admin: { readOnly: true, hidden: true },
+    },
+    {
+      name: 'id',
+      type: 'number',
+      label: 'Κωδικός',
+      admin: { readOnly: true, hidden: true },
+    },
   ],
 }

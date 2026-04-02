@@ -3,12 +3,17 @@ import { CollectionConfig } from 'payload'
 
 export const Services: CollectionConfig = {
   slug: 'services', // Keep the slug the same
+  labels: {
+    singular: 'Υπηρεσία',
+    plural: 'Υπηρεσίες',
+  },
   access: {
     read: () => true,
     update: ({ req: { user } }) => {
       if (!user) return false
       return user.id === 2
     },
+
     // Create access: only for the same user
     create: ({ req: { user } }) => {
       if (!user) return false
@@ -26,25 +31,25 @@ export const Services: CollectionConfig = {
   fields: [
     {
       name: 'title',
-      label: 'Title',
+      label: 'Τίτλος',
       type: 'text',
       required: true,
     },
     {
       name: 'slug',
-      label: 'Slug',
+      label: 'Ονομα',
       type: 'text',
       unique: true,
       required: true,
     },
     {
       name: 'description',
-      label: 'Description',
+      label: 'Περιγραφή',
       type: 'textarea',
     },
     {
       name: 'image',
-      label: 'Image',
+      label: 'Εικόνα',
       type: 'upload',
       relationTo: 'media',
       required: true,

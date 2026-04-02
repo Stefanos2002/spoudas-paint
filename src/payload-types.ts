@@ -127,9 +127,9 @@ export interface UserAuthOperations {
  * via the `definition` "users".
  */
 export interface User {
-  id: number;
   updatedAt: string;
   createdAt: string;
+  id: number;
   email: string;
   resetPasswordToken?: string | null;
   resetPasswordExpiration?: string | null;
@@ -153,12 +153,12 @@ export interface User {
 export interface Media {
   id: number;
   alt: string;
-  _key?: string | null;
   updatedAt: string;
   createdAt: string;
+  _key?: string | null;
   url?: string | null;
   thumbnailURL?: string | null;
-  filename?: string | null;
+  filename: string;
   mimeType?: string | null;
   filesize?: number | null;
   width?: number | null;
@@ -335,6 +335,7 @@ export interface PayloadMigration {
 export interface UsersSelect<T extends boolean = true> {
   updatedAt?: T;
   createdAt?: T;
+  id?: T;
   email?: T;
   resetPasswordToken?: T;
   resetPasswordExpiration?: T;
@@ -356,9 +357,9 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
-  _key?: T;
   updatedAt?: T;
   createdAt?: T;
+  _key?: T;
   url?: T;
   thumbnailURL?: T;
   filename?: T;

@@ -2,10 +2,9 @@ import { CollectionConfig } from 'payload'
 
 export const Team: CollectionConfig = {
   slug: 'team',
-
   labels: {
-    singular: 'Member',
-    plural: 'Team',
+    singular: 'Μέλος',
+    plural: 'Ομάδα',
   },
   access: {
     read: () => true,
@@ -19,25 +18,25 @@ export const Team: CollectionConfig = {
   fields: [
     {
       name: 'name',
-      label: 'Name',
+      label: 'Ονομα',
       type: 'text',
       unique: true,
       required: true,
     },
     {
       name: 'role',
-      label: 'Role',
+      label: 'Ρόλος',
       type: 'text',
       required: true,
     },
     {
       name: 'description',
-      label: 'Description',
+      label: 'Περιγραφή',
       type: 'textarea',
     },
     {
       name: 'image',
-      label: 'Image',
+      label: 'Εικόνα',
       type: 'upload',
       relationTo: 'media',
       required: true,

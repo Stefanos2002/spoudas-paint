@@ -9,6 +9,10 @@ export const Media: CollectionConfig = {
     delete: () => true,
     create: () => true,
   },
+  labels: {
+    singular: 'Εικόνα',
+    plural: 'Εικόνες',
+  },
   upload: {
     disableLocalStorage: true,
     imageSizes: [
@@ -41,6 +45,24 @@ export const Media: CollectionConfig = {
       name: 'alt',
       type: 'text',
       required: true,
+    },
+    {
+      name: 'filename',
+      type: 'text',
+      label: 'Ονομα Αρχείου',
+      required: true,
+    },
+    {
+      name: 'updatedAt',
+      type: 'date',
+      label: 'Μεταβλήθηκε',
+      admin: { readOnly: true, hidden: true },
+    },
+    {
+      name: 'createdAt',
+      type: 'date',
+      label: 'Δημιουργήθηκε',
+      admin: { readOnly: true, hidden: true },
     },
   ],
 }
