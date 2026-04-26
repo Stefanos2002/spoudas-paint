@@ -1,4 +1,4 @@
-export const dynamic = 'force-dynamic'
+export const revalidate = 60
 
 import type { Metadata } from 'next'
 import { siteConfig } from '@/lib/seo'
@@ -25,7 +25,6 @@ export default async function Gallery() {
   const docs = await getGallery()
 
   const images = docs.flatMap((doc) => doc.images)
-  // Map Payload data to Masonry format
   const masonryItems = mapGalleryImages(images)
 
   return (

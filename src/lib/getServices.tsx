@@ -1,19 +1,20 @@
-// lib/getGallery.ts
+// lib/getServices.ts
+import { unstable_cache } from 'next/cache'
 import type { ServicesDoc } from './types'
 
-interface GalleryResponse {
+interface ServicesResponse {
   docs: ServicesDoc[]
 }
 
-export async function getServices(): Promise<ServicesDoc[]> {
-  const res = await fetch(`${process.env.PAYLOAD_URL}/api/services?depth=2`, {
-    next: { revalidate: 60 },
-  })
+export const getServices = unstable_cache(
+  async (): Promise<ServicesDoc[]> => {
+    const res = await fetch(`${process.env.PAYLOAD_URL}/api/services?depth=2`)
+    const data: ServicesResponse = await res.json()
 
-  const data: GalleryResponse = await res.json()
+    if (!data.docs?.length) return []
 
-  if (!data.docs?.length) return []
-
-  // flatmap για να επιστρψει ολα τα galleries
-  return data.docs
-}
+    return data.docs
+  },
+  ['services'],
+  { revalidate: 60, tags: ['services'] },
+)

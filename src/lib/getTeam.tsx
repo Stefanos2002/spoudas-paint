@@ -1,19 +1,20 @@
-// lib/getGallery.ts
+// lib/getTeam.ts
+import { unstable_cache } from 'next/cache'
 import type { TeamDoc } from './types'
 
-interface GalleryResponse {
+interface TeamResponse {
   docs: TeamDoc[]
 }
 
-export async function getTeam(): Promise<TeamDoc[]> {
-  const res = await fetch(`${process.env.PAYLOAD_URL}/api/team?depth=1`, {
-    next: { revalidate: 60 },
-  })
+export const getTeam = unstable_cache(
+  async (): Promise<TeamDoc[]> => {
+    const res = await fetch(`${process.env.PAYLOAD_URL}/api/team?depth=1`)
+    const data: TeamResponse = await res.json()
 
-  const data: GalleryResponse = await res.json()
+    if (!data.docs?.length) return []
 
-  if (!data.docs?.length) return []
-
-  // flatmap για να επιστρψει ολα τα galleries
-  return data.docs.reverse()
-}
+    return data.docs.reverse()
+  },
+  ['team'],
+  { revalidate: 60, tags: ['team'] },
+)
