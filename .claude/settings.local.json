@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:spoudas-paint.onrender.com)"
+      "WebFetch(domain:www.spoudaspaint.gr)",
+      "WebFetch(domain:spoudaspaint.gr)"
     ]
   }
 }

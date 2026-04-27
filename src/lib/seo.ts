@@ -4,7 +4,7 @@ export const siteConfig = {
   shortName: 'Σπουδάς',
   description:
     'Επαγγελματικές βαφές χώρων με 30+ χρόνια εμπειρίας. Ελαιοχρωματισμός, ανακαίνιση και διακόσμηση χώρων από οικογενειακή επιχείρηση. Ζητήστε προσφορά σήμερα.',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://spoudas-paint.onrender.com',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.spoudaspaint.gr',
   email: 'denisp1998glx@gmail.com',
   phone: ['+30 697 318 8392', '+30 698 946 2660'], // TODO: add second number
   locale: 'el_GR',

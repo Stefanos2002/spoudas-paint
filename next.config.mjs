@@ -25,7 +25,12 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'spoudas-paint.onrender.com',
+        hostname: 'www.spoudaspaint.gr',
+        pathname: '/api/media/file/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'spoudaspaint.gr',
         pathname: '/api/media/file/**',
       },
       {
