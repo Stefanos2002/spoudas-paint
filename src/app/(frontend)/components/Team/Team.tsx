@@ -1,6 +1,5 @@
 import { getTeam } from '@/lib/getTeam'
 import Image from 'next/image'
-import styles from './Team.module.css'
 import ScrollReveal from '@/lib/ScrollReveal'
 
 export default async function Team() {
@@ -10,7 +9,7 @@ export default async function Team() {
     <main id="team" className="bg-white pt-20 pb-18">
       <div className="max-w-6xl mx-auto px-6">
         {/* Heading */}
-        <div className={`mb-16 ${styles.reveal}`}>
+        <div className="mb-16 team-reveal">
           <span className="text-blue-600 font-bold tracking-widest text-[12px] uppercase block mb-2">
             Ποιοι ειμαστε
           </span>
@@ -29,7 +28,7 @@ export default async function Team() {
           {team.map((member) => (
             <div
               key={member.id}
-              className={`${styles.cardReveal} text-center bg-gray-50 p-8 rounded-3xl shadow-sm`}
+              className="team-card-reveal text-center bg-gray-50 p-8 rounded-3xl shadow-sm"
             >
               {member.image?.url && (
                 <Image
@@ -58,7 +57,7 @@ export default async function Team() {
           ].map((text) => (
             <div
               key={text}
-              className={`${styles.badgeReveal} flex items-center gap-3 bg-blue-900 p-3 rounded-full justify-center`}
+              className="team-badge-reveal flex items-center gap-3 bg-blue-900 p-3 rounded-full justify-center"
             >
               <span className="text-white text-xl">✔</span>
               <p className="font-medium text-sm text-white">{text}</p>
@@ -68,8 +67,8 @@ export default async function Team() {
       </div>
 
       <ScrollReveal
-        selectors={[styles.reveal, styles.cardReveal, styles.badgeReveal]}
-        visibleClass={styles.visible}
+        selectors={['team-reveal', 'team-card-reveal', 'team-badge-reveal']}
+        visibleClass="visible"
         threshold={0.1}
       />
     </main>

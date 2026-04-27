@@ -1,7 +1,6 @@
 import { getServices } from '@/lib/getServices'
 import Image from 'next/image'
 import Link from 'next/link'
-import styles from './Services.module.css'
 import ScrollReveal from '@/lib/ScrollReveal'
 
 export default async function Services() {
@@ -10,10 +9,10 @@ export default async function Services() {
   return (
     <main id="services" className="relative z-10 -mt-20 md:-mt-12 flex flex-col">
       <div
-        className={`bg-white border-t-24 ${styles.design} border-neutral-100 rounded-t-[2.5rem] md:rounded-t-[3rem] shadow-md pt-16 md:pt-24 overflow-hidden`}
+        className="bg-white border-t-24 services-design border-neutral-100 rounded-t-[2.5rem] md:rounded-t-[3rem] shadow-md pt-16 md:pt-24 overflow-hidden"
       >
         {/* Section header */}
-        <div className={`text-center max-w-2xl mx-auto px-6 mb-20 ${styles.reveal}`}>
+        <div className="text-center max-w-2xl mx-auto px-6 mb-20 services-reveal">
           <span className="text-blue-600 font-bold tracking-widest text-[12px] uppercase mb-2 block">
             Τι προσφερουμε
           </span>
@@ -37,7 +36,7 @@ export default async function Services() {
                   <div
                     className={`relative w-full h-80 sm:h-96 md:h-120 ${
                       isEven ? 'md:order-last' : 'md:order-first'
-                    } order-first ${isEven ? styles.revealRight : styles.revealLeft}`}
+                    } order-first ${isEven ? 'services-reveal-right' : 'services-reveal-left'}`}
                   >
                     <Image
                       src={item.image.sizes?.card?.url ?? item.image.url}
@@ -54,7 +53,7 @@ export default async function Services() {
                   className={`${
                     isEven ? 'md:order-first' : 'md:order-last'
                   } order-last p-8 py-25 sm:py-35 md:py-0 flex flex-col justify-center gap-7 leading-[30px] text-lg
-                  ${isEven ? styles.revealLeft : styles.revealRight}`}
+                  ${isEven ? 'services-reveal-left' : 'services-reveal-right'}`}
                 >
                   <h1 className="font-black tracking-tight text-[23px] sm:text-[1.6rem] text-blue-950">
                     {item.title}
@@ -84,8 +83,8 @@ export default async function Services() {
 
       {/* Client component that runs the IntersectionObserver after hydration */}
       <ScrollReveal
-        selectors={[styles.reveal, styles.revealLeft, styles.revealRight]}
-        visibleClass={styles.visible}
+        selectors={['services-reveal', 'services-reveal-left', 'services-reveal-right']}
+        visibleClass="visible"
       />
     </main>
   )

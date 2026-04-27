@@ -4,6 +4,10 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  '@payloadcms/plugin-cloud-storage': 3.69.0
+  '@payloadcms/ui': 3.69.0
+
 importers:
 
   .:
