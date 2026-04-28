@@ -14,14 +14,14 @@ export async function generateMetadata({
   const { slug } = await params
   const docs = await getGallery(slug)
   const title = (docs[0] as { title?: string })?.title ?? slug
-  const description = `Έργα ${title} — επαγγελματικός ελαιοχρωματισμός και ανακαίνιση χώρων από τη Σπουδάς.`
+  const description = `Έργα ${title} — επαγγελματικός ελαιοχρωματισμός και ανακαίνιση χώρων.`
 
   return {
     title,
     description,
     alternates: { canonical: `${siteConfig.url}/gallery/${slug}` },
     openGraph: {
-      title: `${title} | Σπουδάς`,
+      title: `${title} | Σπούδας`,
       description,
       url: `${siteConfig.url}/gallery/${slug}`,
       type: 'website',

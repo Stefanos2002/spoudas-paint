@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     'Δείτε τα έργα ελαιοχρωματισμού και ανακαίνισης που έχουμε ολοκληρώσει. Επαγγελματικές βαφές εσωτερικών και εξωτερικών χώρων.',
   alternates: { canonical: `${siteConfig.url}/gallery` },
   openGraph: {
-    title: 'Τα Έργα μας | Σπουδάς',
+    title: 'Τα Έργα μας | Σπούδας',
     description:
       'Δείτε τα έργα ελαιοχρωματισμού και ανακαίνισης που έχουμε ολοκληρώσει.',
     url: `${siteConfig.url}/gallery`,
