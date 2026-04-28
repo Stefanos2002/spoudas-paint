@@ -133,6 +133,23 @@ export default function Lightbox({ images, index, onClose, onNext, onPrev }: Lig
           <GrPrevious />
         </button>
 
+        {/* Preload adjacent images */}
+        {[-1, 1].map((offset) => {
+          const adjIndex = (displayIndex + offset + images.length) % images.length
+          const adj = images[adjIndex]
+          return (
+            <Image
+              key={`preload-${adjIndex}`}
+              src={adj.img}
+              alt=""
+              fill
+              priority
+              className="opacity-0 pointer-events-none absolute"
+              aria-hidden
+            />
+          )
+        })}
+
         {/* Image — leaves 48px at bottom for dots */}
         <div
           className="lightbox-content relative w-full max-w-6xl px-20"
