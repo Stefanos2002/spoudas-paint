@@ -11,7 +11,7 @@ export default function JsonLd() {
     email: siteConfig.email,
     telephone: siteConfig.phone, // array → Google shows both numbers
     image: `${siteConfig.url}/images/Banner.jpg`,
-    logo: `${siteConfig.url}/images/logo-splash.png`,
+    logo: `${siteConfig.url}/images/logo.webp`,
     address: {
       '@type': 'PostalAddress',
       streetAddress: siteConfig.address.street,
