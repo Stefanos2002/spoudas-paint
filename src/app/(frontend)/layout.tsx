@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
-    template: `%s | Σπουδάς`,
+    template: `%s | Σπούδας`,
   },
   description: siteConfig.description,
   keywords: [
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     'Βάρδα',
     'Ηλείας',
   ],
-  authors: [{ name: 'Σπουδάς' }],
-  creator: 'Σπουδάς Χρώμα & Διακόσμηση',
-  publisher: 'Σπουδάς',
+  authors: [{ name: 'Σπούδας' }],
+  creator: 'Σπούδας Χρώμα & Διακόσμηση',
+  publisher: 'Σπούδας',
   alternates: {
     canonical: siteConfig.url,
     languages: { 'el-GR': siteConfig.url },
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
         url: '/images/Banner.jpg',
         width: 1200,
         height: 630,
-        alt: 'Σπουδάς Χρώμα & Διακόσμηση',
+        alt: 'Σπούδας Χρώμα & Διακόσμηση',
       },
     ],
   },
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
   // Geo meta tags for local SEO
   other: {
     'geo.region': 'GR-I', // Attica — update if different region
-    'geo.placename': siteConfig.address.city || 'Αθήνα',
+    'geo.placename': siteConfig.address.city || 'Βάρδα',
     'geo.position': `${siteConfig.geo.lat};${siteConfig.geo.lng}`,
     ICBM: `${siteConfig.geo.lat}, ${siteConfig.geo.lng}`,
   },

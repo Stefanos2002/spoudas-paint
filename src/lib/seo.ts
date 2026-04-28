@@ -1,7 +1,7 @@
 // ─── Fill in the TODOs below with your real business details ───────────────
 export const siteConfig = {
-  name: 'Σπουδάς | Χρώμα & Διακόσμηση',
-  shortName: 'Σπουδάς',
+  name: 'Σπούδας | Χρώμα & Διακόσμηση',
+  shortName: 'Σπούδας',
   description:
     'Επαγγελματικές βαφές χώρων με 30+ χρόνια εμπειρίας. Ελαιοχρωματισμός, ανακαίνιση και διακόσμηση χώρων από οικογενειακή επιχείρηση. Ζητήστε προσφορά σήμερα.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.spoudaspaint.gr',
@@ -17,7 +17,7 @@ export const siteConfig = {
   },
   // Approximate lat/lng for geo meta tags — update to your actual location
   geo: {
-    lat: '  38.03055947742945',
+    lat: '38.03055947742945',
     lng: '21.390095126516673',
   },
 } as const

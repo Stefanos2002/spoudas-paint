@@ -4,12 +4,12 @@ export default function JsonLd() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'Σπουδάς Χρώμα & Διακόσμηση',
+    name: 'Σπούδας Χρώμα & Διακόσμηση',
     alternateName: 'Spoudas Paint',
     description: siteConfig.description,
     url: siteConfig.url,
     email: siteConfig.email,
-    telephone: siteConfig.phone,  // array → Google shows both numbers
+    telephone: siteConfig.phone, // array → Google shows both numbers
     image: `${siteConfig.url}/images/Banner.jpg`,
     logo: `${siteConfig.url}/images/logo-splash.png`,
     address: {
