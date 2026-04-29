@@ -161,8 +161,9 @@ export default function MobileMenu({ scrollTo }: Props) {
             </p>
             <div className="flex flex-col sm:flex-row gap-2.5">
               {[
-                { label: 'Γραμμή Α', number: '697 318 8392', href: 'tel:+306973188392' },
-                { label: 'Γραμμή Β', number: '698 946 2660', href: 'tel:+306989462660' },
+                { label: 'Γραμμή Α', number: '697 837 7224', href: 'tel:+306978377224' },
+                { label: 'Γραμμή Β', number: '697 318 8392', href: 'tel:+306973188392' },
+                { label: 'Γραμμή Γ', number: '698 946 2660', href: 'tel:+306989462660' },
               ].map((call) => (
                 <a
                   key={call.href}

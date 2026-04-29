@@ -4,13 +4,7 @@ export default function Loading() {
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-blue-950 gap-5">
       <div className="flex items-center gap-1">
-        <Image
-          src="/images/logo-splash.png"
-          alt="Σπουδάς"
-          width={64}
-          height={62}
-          priority
-        />
+        <Image src="/images/logo-splash.png" alt="Σπουδας" width={64} height={62} priority />
         <div className="flex flex-col -translate-x-8">
           <span className="text-white text-2xl font-black tracking-tighter leading-none">
             ΣΠΟΥΔΑΣ
