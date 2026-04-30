@@ -38,6 +38,13 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   return (
     <div className="flex flex-col p-4">
+      <div className="text-center pt-20 pb-2">
+        <h1 className="text-3xl font-bold text-blue-950 mb-2">Τα Εργα μας</h1>
+        <p className="text-neutral-600 max-w-xl mx-auto">
+          Επαγγελματικοί ελαιοχρωματισμοί εσωτερικών και εξωτερικών χώρων — δείτε μερικά από τα έργα
+          που έχουμε ολοκληρώσει.
+        </p>
+      </div>
       <GalleryClient items={masonryItems} />
     </div>
   )

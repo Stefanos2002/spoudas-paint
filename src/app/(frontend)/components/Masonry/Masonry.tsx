@@ -44,7 +44,6 @@ const useMeasure = <T extends HTMLElement>() => {
   return [ref, size] as const
 }
 
-
 export interface Item {
   id: string
   img: string
@@ -227,7 +226,7 @@ const Masonry: React.FC<MasonryProps> = ({
   }
 
   return (
-    <div ref={containerRef} className="relative mt-22 w-full" style={{ height: containerHeight }}>
+    <div ref={containerRef} className="relative mt-8 w-full" style={{ height: containerHeight }}>
       {grid.map((item) => (
         <div
           key={item.id}
