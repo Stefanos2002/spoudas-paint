@@ -1,17 +1,30 @@
 import { siteConfig } from '@/lib/seo'
 
 export default function JsonLd() {
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Σπούδας | Χρώμα & Διακόσμηση',
+    alternateName: 'Spoudas Paint',
+    url: siteConfig.url,
+  }
+
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'Σπούδας Χρώμα & Διακόσμηση',
+    name: 'Σπούδας | Χρώμα & Διακόσμηση',
     alternateName: 'Spoudas Paint',
     description: siteConfig.description,
     url: siteConfig.url,
     email: siteConfig.email,
     telephone: siteConfig.phone, // array → Google shows both numbers
     image: `${siteConfig.url}/images/Banner.jpg`,
-    logo: `${siteConfig.url}/images/logo.webp`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteConfig.url}/images/logo.webp`,
+      width: 512,
+      height: 512,
+    },
     address: {
       '@type': 'PostalAddress',
       streetAddress: siteConfig.address.street,
@@ -44,9 +57,15 @@ export default function JsonLd() {
   }
 
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+    </>
   )
 }

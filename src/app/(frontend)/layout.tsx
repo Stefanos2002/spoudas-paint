@@ -30,7 +30,6 @@ export const metadata: Metadata = {
     'βαφή εξωτερικού',
     'βαφή εσωτερικού',
     'διακόσμηση χώρων',
-    'μαστόρος βαφής',
     'Βάρδα',
     'Ηλείας',
   ],
@@ -62,6 +61,10 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: ['/images/Banner.jpg'],
+  },
+  icons: {
+    icon: '/images/logo.webp',
+    apple: '/images/logo.webp',
   },
   robots: {
     index: true,
