@@ -14,6 +14,7 @@ interface Props {
  */
 export default function ScrollReveal({ selectors, visibleClass, threshold = 0.12 }: Props) {
   useEffect(() => {
+    document.documentElement.dataset.revealReady = '1'
     const query = selectors.map((s) => `.${s}`).join(', ')
     const els = document.querySelectorAll<HTMLElement>(query)
 

@@ -3,7 +3,17 @@ import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY)
-  const { name, phone, area, services, message } = await req.json()
+  const body = await req.json()
+  const { name, phone, area, services, message } = body
+
+  if (
+    typeof name !== 'string' || !name.trim() ||
+    typeof phone !== 'string' || !/^\d{10}$/.test(phone.replace(/\s/g, '')) ||
+    typeof area !== 'string' || !area.trim() ||
+    !Array.isArray(services) || services.length === 0
+  ) {
+    return NextResponse.json({ error: 'Invalid input' }, { status: 400 })
+  }
 
   const servicesHtml = services
     .map(
@@ -173,8 +183,8 @@ export async function POST(req: Request) {
 
   try {
     await resend.emails.send({
-      from: 'Ραντεβού <onboarding@resend.dev>', // replace with your verified domain later
-      to: [process.env.CONTACT_EMAIL!], // 👈 replace this
+      from: 'Ραντεβού <noreply@spoudaspaint.gr>', // replace with your verified domain later
+      to: [process.env.CONTACT_EMAIL!],
       subject: `📋 Νέο Ραντεβού — ${name} (${area})`,
       html,
     })

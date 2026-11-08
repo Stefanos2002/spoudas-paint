@@ -89,9 +89,14 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
 
   return (
-    <html lang="el">
+    <html lang="el" suppressHydrationWarning>
       <head>
         <JsonLd />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.documentElement.classList.add('js');setTimeout(function(){var d=document.documentElement;if(!d.dataset.revealReady)d.classList.add('reveal-failsafe')},4000)`,
+          }}
+        />
       </head>
       <body className={`${manrope.variable} antialiased flex flex-col min-h-screen`}>
         <ClientWrapper>
