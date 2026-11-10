@@ -8,9 +8,7 @@ export default async function Services() {
 
   return (
     <main id="services" className="relative z-10 -mt-20 md:-mt-12 flex flex-col">
-      <div
-        className="bg-white border-t-24 services-design border-neutral-100 rounded-t-[2.5rem] md:rounded-t-[3rem] shadow-md pt-16 md:pt-24 overflow-hidden"
-      >
+      <div className="bg-white border-t-24 services-design border-neutral-100 rounded-t-[2.5rem] md:rounded-t-[3rem] shadow-md pt-16 md:pt-24 overflow-hidden">
         {/* Section header */}
         <div className="text-center max-w-2xl mx-auto px-6 mb-20 services-reveal">
           <span className="text-blue-600 font-bold tracking-widest text-[12px] uppercase mb-2 block">
@@ -45,6 +43,7 @@ export default async function Services() {
                       priority={index === 0}
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 50vw"
+                      unoptimized
                     />
                   </div>
                 )}

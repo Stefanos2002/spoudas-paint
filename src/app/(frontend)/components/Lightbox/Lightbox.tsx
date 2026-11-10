@@ -145,6 +145,7 @@ export default function Lightbox({ images, index, onClose, onNext, onPrev }: Lig
               fill
               priority
               className="opacity-0 pointer-events-none absolute"
+              unoptimized
               aria-hidden
             />
           )
@@ -163,6 +164,7 @@ export default function Lightbox({ images, index, onClose, onNext, onPrev }: Lig
               fill
               className="object-contain"
               priority
+              unoptimized
             />
           </div>
         </div>
